@@ -47,68 +47,121 @@
 
 #message:2F:004
 {
-	[CenterX 159]it's been said that there's[BR]
-	a haven where the Stars live.[End]
+	[Style Right]
+	Wow! It's cold, but cozy! The[BR]
+	Princess sure knows how to[BR]
+	organize a shindig![BR]
+	[Wait][Next]
+	I'm gonna chat with Harry. He[BR]
+	offered me a huge deal on super[BR]
+	shrooms if I finish my new book[BR]
+	before the new year![Wait][End]
 }
 
 #message:2F:005
 {
-	[CenterX 159]it's been said that there's[BR]
-	a haven where the Stars live.[End]
+	[Style Right]
+	Still hashing out the plot, bro.[BR]
+	[Pause 10]Man, writing is hard![BR]
+	[Wait][Next]
+	So far, I'm thinking...[Pause 15] a beloved[BR]
+	princess...[Pause 15] is kidnapped by some[BR]
+	kind of...[Pause 15] evil...[Pause 15] lizard?[Pause 10] Is that[BR]
+	anything?[Wait][End]
 }
 
 #message:2F:006
 {
-	[CenterX 159]In the sanctuary of Star Haven[End]
+	[Style Right]
+	Luigi's a great author, but[BR]
+	without inspiration he takes[BR]
+	forever to finish a page.[BR]
+	[Wait][Next]
+	That's why I've started my own[BR]
+	book to compete with him.[Pause 10] I call[BR]
+	it...[Pause 15] "The Winds of Winter".[BR]
+	[Wait][Next]
+	I'm sure it'll be done any day[BR]
+	now. How hard can it be?[Wait][End]
 }
 
 #message:2F:007
 {
-	[CenterX 159]there rests a fabled treasure[BR]
-	called the Star Rod,[End]
+	[Style Right]
+	My feet are cold. Brr.[BR]
+	[Wait][Next]
+	What? Round, adorable little[BR]
+	guys get cold feet too![Wait][End]
 }
 
 #message:2F:008
 {
-	[CenterX 159]which has the power to grant[BR]
-	all wishes.[End]
+	[Style Right]
+	[Wave]Mwahaha![/fx][Pause 10] I'm the ghost of[BR]
+	Christmas Past![BR]
+	[Wait][Next]
+	...Nah, just kidding.[Pause 10] But it makes[BR]
+	you think, doesn't it?[Pause 10] When does[BR]
+	this all really take place?
+	[Wait][End]
 }
 
 #message:2F:009
 {
-	[CenterX 159]Using this wondrous Star Rod,[BR]
-	the seven revered Star Spirits[End]
+	[Style Right]
+	I've been following the Princess[BR]
+	all day, and there's been no sign[BR]
+	of Bowser![BR]
+	[Wait][Next]
+	We might just have a quiet[BR]
+	Christmas without any evil[BR]
+	schemes this year!
+	[Wait][End]
 }
 
 #message:2F:00A
 {
-	[CenterX 159]watched over our peaceful world[End]
+	[Style Right]
+	Aren't clothes great?[Pause 10] My[BR]
+	designer outfit keeps me warm[BR]
+	all winter![Wait][End]
 }
 
 #message:2F:00B
 {
-	[CenterX 159]carefully...very carefully.[End]
+	[Style Right]
+	And my designer shoes keep my[BR]
+	feet dry, even in deep snow![Wait][End]
 }
 
 #message:2F:00C
 {
-	[CenterX 159]And then...[End]
+	[Style Right]
+	[Wave]Brr...[/fx][Pause 15] I wish someone would[BR]
+	design a hat that could cover[BR]
+	my stupid head, though![Wait][End]
 }
 
 #message:2F:00D
 {
-	[CenterX 159]Oh dear... What the...?[End]
+	[Style Right]
+	Hello, Mario![Pause 10] Are you ready to[BR]
+	start the festivities?[Yield][End]
 }
 
 #message:2F:00E
 {
-	[CenterX 159]Who stuck that weird thing[BR]
-	into this story?[End]
+	[Style Right]
+	Wonderful![Pause 10] All we need now is[BR]
+	Parakarry.[Pause 10] He's running late...[Pause 15][BR]
+	as usual.[Wait][End]
 }
 
 #message:2F:00F
 {
-	[CenterX 159]Ha ha ha! Yeah! I did![End]
+	[Style Right]
+	That's okay![Pause 10] Parakarry isn't[BR]
+	here yet anyway.[Wait][End]
 }
 
 #message:2F:010

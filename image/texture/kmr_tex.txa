@@ -1364,3 +1364,63 @@ tex: mac_hanatif
 	filter: yes
 	combine: 8
 }
+
+tex: sam_ki3tif
+{
+	img: sam_ki3tif.png
+	{
+		format: CI-4
+		hwrap: repeat
+		vwrap: repeat
+	}
+	filter: yes
+	combine: 8
+}
+
+tex: sam_odo_iwahashi3tif
+{
+	img: sam_odo_iwahashi3tif.png
+	{
+		format: CI-4
+		hwrap: repeat
+		vwrap: repeat
+	}
+	filter: yes
+	combine: 8
+}
+
+tex: sam_ice3tif
+{
+	img: sam_ice3tif.png
+	{
+		format: CI-4
+		hwrap: repeat
+		vwrap: repeat
+	}
+	filter: yes
+	combine: 8
+}
+
+tex: sam_s_sakutif
+{
+	img: sam_s_sakutif.png
+	{
+		format: CI-4
+		hwrap: repeat
+		vwrap: clamp
+	}
+	filter: yes
+	combine: 8
+}
+
+tex: sam_yane_yukitif
+{
+	img: sam_yane_yukitif.png
+	{
+		format: CI-4
+		hwrap: repeat
+		vwrap: clamp
+	}
+	filter: yes
+	combine: 8
+}

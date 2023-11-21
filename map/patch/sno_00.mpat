@@ -1,0 +1,270 @@
+#define .NpcID:Luigi            0
+#define .NpcID:Princess         1
+#define .NpcID:ToadGuard        2
+#define .NpcID:Bumpty           3
+#define .NpcID:Boo              4
+#define .NpcID:ThreeSisters_1   5
+#define .NpcID:ThreeSisters_2   6
+#define .NpcID:ThreeSisters_3   7
+#define .NpcID:Parakarry        8
+#define .NpcID:Harry            9
+
+@ $Script_Main {
+    Call  SetCamPerspective  ( .Cam:Default 00000003 00000019 00000010 00001000 )
+    Call  SetCamBGColor      ( .Cam:Default 00000000 00000000 00000000 )
+    Call  SetCamEnabled      ( .Cam:Default .True )
+    Call  SetCamLeadPlayer   ( .Cam:Default .False )
+    Exec  $Script_SetupMusic
+    Call  MakeNpcs  ( .False $NpcGroupList_Always )
+    Exec  $Script_EnterMap
+    Return
+    End
+}
+
+#new:NpcGroupList $NpcGroupList_Always
+{
+	0000000A $NpcGroup_Always 00000000
+    00000000 00000000 00000000
+}
+
+#new:NpcGroup $NpcGroup_Always
+{
+	.NpcID:Luigi $NpcSettings_Standard ~Vec3f:Luigi
+	00000001 $Script_Init_Luigi 00000000 00000000 00000000
+	~NoDrops
+	~Movement:Luigi
+	~AnimationTable:Luigi
+	00000000 00000000 00000000 00000000 % Tattle ID
+    %
+    .NpcID:Princess $NpcSettings_Standard ~Vec3f:Princess
+	00000001 $Script_Init_Princess 00000000 00000000 00000000
+	~NoDrops
+	~Movement:Princess
+	~AnimationTable:Princess
+	00000000 00000000 00000000 00000000 % Tattle ID
+    %
+    .NpcID:ToadGuard $NpcSettings_Standard ~Vec3f:ToadGuard
+	00000001 $Script_Init_ToadGuard 00000000 00000000 00000000
+	~NoDrops
+	~Movement:ToadGuard
+	~AnimationTable:ToadGuard
+	00000000 00000000 00000000 00000000 % Tattle ID
+    %
+    .NpcID:Bumpty $NpcSettings_Standard ~Vec3f:Bumpty
+	00000001 $Script_Init_Bumpty 00000000 00000000 00000000
+	~NoDrops
+	~Movement:Bumpty
+	~AnimationTable:Bumpty
+	00000000 00000000 00000000 00000000 % Tattle ID
+    %
+    .NpcID:Boo $NpcSettings_Standard ~Vec3f:Boo
+	00000001 $Script_Init_Boo 00000000 00000000 00000000
+	~NoDrops
+	~Movement:Boo
+	~AnimationTable:Boo
+	00000000 00000000 00000000 00000000 % Tattle ID
+    %
+    .NpcID:ThreeSisters_1 $NpcSettings_Standard ~Vec3f:ThreeSisters_1
+	00000001 $Script_Init_ThreeSisters_1 00000000 00000000 00000000
+	~NoDrops
+	~Movement:ThreeSisters_1
+	~AnimationTable:ThreeSisters_1
+	00000000 00000000 00000000 00000000 % Tattle ID
+    %
+    .NpcID:ThreeSisters_2 $NpcSettings_Standard ~Vec3f:ThreeSisters_2
+	00000001 $Script_Init_ThreeSisters_2 00000000 00000000 00000000
+	~NoDrops
+	~Movement:ThreeSisters_2
+	~AnimationTable:ThreeSisters_2
+	00000000 00000000 00000000 00000000 % Tattle ID
+    %
+    .NpcID:ThreeSisters_3 $NpcSettings_Standard ~Vec3f:ThreeSisters_3
+	00000001 $Script_Init_ThreeSisters_3 00000000 00000000 00000000
+	~NoDrops
+	~Movement:ThreeSisters_3
+	~AnimationTable:ThreeSisters_3
+	00000000 00000000 00000000 00000000 % Tattle ID
+    %
+    .NpcID:Parakarry $NpcSettings_Standard ~Vec3f:Parakarry
+	00000001 $Script_Init_Parakarry 00000000 00000000 00000000
+	~NoDrops
+	~Movement:Parakarry
+	~AnimationTable:Parakarry
+	00000000 00000000 00000000 00000000 % Tattle ID
+    %
+    .NpcID:Harry $NpcSettings_Standard ~Vec3f:Harry
+	00000001 $Script_Init_Harry 00000000 00000000 00000000
+	~NoDrops
+	~Movement:Harry
+	~AnimationTable:Harry
+	00000000 00000000 00000000 00000000 % Tattle ID
+}
+
+#new:NpcSettings $NpcSettings_Standard
+{
+	00000000 001E0018 00000000 00000000 00000000 00000000 00000000 00000000
+	00000000 00000000 00630000
+}
+
+#new:Script $Script_Init_Luigi
+{
+    Call  BindNpcInteract   ( .Npc:Self $Script_Interact_Luigi )
+    Return
+    End
+}
+
+#new:Script $Script_Init_Princess
+{
+    Call SetNpcYaw ( .Npc:Self 270` )
+    Call  BindNpcInteract   ( .Npc:Self $Script_Interact_Princess )
+    Return
+    End
+}
+
+#new:Script $Script_Init_ToadGuard
+{
+    Call SetNpcYaw ( .Npc:Self 270` )
+    Call  BindNpcInteract   ( .Npc:Self $Script_Interact_ToadGuard )
+    Return
+    End
+}
+
+#new:Script $Script_Init_Boo
+{
+    Call  BindNpcInteract   ( .Npc:Self $Script_Interact_Boo )
+    Return
+    End
+}
+
+#new:Script $Script_Init_Bumpty
+{
+    Call  BindNpcInteract   ( .Npc:Self $Script_Interact_Bumpty )
+    Return
+    End
+}
+
+#new:Script $Script_Init_ThreeSisters_1
+{
+    Call SetNpcYaw ( .Npc:Self 270` )
+    Call  BindNpcInteract   ( .Npc:Self $Script_Interact_ThreeSisters )
+    Return
+    End
+}
+
+#new:Script $Script_Init_ThreeSisters_2
+{
+    Call SetNpcYaw ( .Npc:Self 270` )
+    Call  BindNpcInteract   ( .Npc:Self $Script_Interact_ThreeSisters )
+    Return
+    End
+}
+
+#new:Script $Script_Init_ThreeSisters_3
+{
+    Call SetNpcYaw ( .Npc:Self 270` )
+    Call  BindNpcInteract   ( .Npc:Self $Script_Interact_ThreeSisters )
+    Return
+    End
+}
+
+#new:Script $Script_Init_Parakarry
+{
+    Return
+    End
+}
+
+
+#new:Script $Script_Init_Harry
+{
+    Call  BindNpcInteract   ( .Npc:Self $Script_Interact_Harry )
+    Return
+    End
+}
+
+#new:Script $Script_Interact_Luigi
+{
+  Call  SpeakToPlayer ( .Npc:Self 00820014 00820004 00000000 002F0005 ) % String
+  Return
+  End
+}
+
+#new:Script $Script_Interact_Harry
+{
+  Call  SpeakToPlayer ( .Npc:Self 00880004 00880001 00000000 002F0006 ) % String
+  Return
+  End
+}
+
+#new:Script $Script_Interact_Bumpty
+{
+  Call  SpeakToPlayer ( .Npc:Self 009A0004 009A0001 00000000 002F0007 ) % String
+  Return
+  End
+}
+
+#new:Script $Script_Interact_Boo
+{
+  Call  SpeakToPlayer ( .Npc:Self 00950004 00950001 00000000 002F0008 ) % String
+  Return
+  End
+}
+
+#new:Script $Script_Interact_ToadGuard
+{
+  Call  SpeakToPlayer ( .Npc:Self 00870204 00870201 00000000 002F0009 ) % String
+  Return
+  End
+}
+
+#new:Script $Script_Interact_ThreeSisters
+{
+  Call  DisablePlayerInput ( .True )
+  Call  SpeakToPlayer ( .NpcID:ThreeSisters_1 00840204 00840201 00000000 002F000A ) % String
+  Wait 30`
+  Call  SpeakToPlayer ( .NpcID:ThreeSisters_2 00840004 00840001 00000000 002F000B ) % String
+  Wait 30`
+  Call  SpeakToPlayer ( .NpcID:ThreeSisters_3 00840304 00840301 00000000 002F000C ) % String
+  Call  DisablePlayerInput ( .False )
+  Return
+  End
+}
+
+#new:Script $Script_Interact_Princess
+{
+    Call  DisablePlayerInput ( .True )
+    Call  SpeakToPlayer ( .Npc:Self 00D60002 00D60004 00000000 002F000D ) % String
+    Call  ShowChoice ( 001E0004 )
+    If *Var0 == 00000000
+        Call CloseMessage ()
+        Call  SpeakToPlayer ( .Npc:Self 00D60002 00D60004 00000000 002F000E ) % String
+    Else
+        Call CloseMessage ()
+        Call  SpeakToPlayer ( .Npc:Self 00D60002 00D60004 00000000 002F000F ) % String
+  EndIf
+  Call  DisablePlayerInput ( .False )
+  Return
+  End
+}
+
+@ $Script_EnterMap {
+    Call  GetEntryID    ( *Var[0] )
+    Switch  *Var[0]
+        Case  ==  ~Entry:entry_s
+            Set   *Var[0] $Script_CreateExitTriggers
+            Exec  EnterWalk
+            Call  DisablePlayerInput ( .True )
+            Call  SetNpcAnimation   ( .NpcID:Luigi 0082000A )
+            Call  NpcMoveTo     ( .NpcID:Luigi  -16` 300`  0` )
+            Call  SetNpcAnimation   ( .NpcID:Luigi 00820004 )
+            Wait 30`
+            Call  SpeakToPlayer ( .NpcID:Luigi 00820014 00820004 00000000 002F0004 )
+            Call  SetNpcAnimation   ( .NpcID:Luigi 0082000A )
+            Call  NpcMoveTo     ( .NpcID:Luigi  -60` 230`  0` )
+            Call  SetNpcAnimation   ( .NpcID:Luigi 00820004 )
+            Call  DisablePlayerInput ( .False )
+        Default
+            Exec  $Script_CreateExitTriggers
+    EndSwitch
+    Return
+    End
+}

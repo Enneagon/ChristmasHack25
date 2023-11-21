@@ -569,6 +569,9 @@
 		<Map name="tst_20" nickname="Pipes Gallery"/>
 		<Map name="tst_sno" nickname="Snow Test"/>
 	</Area>
+	<Area name="sno" nickname="Christmas Hack">
+		<Map name="sno_00" nickname="Big Tree"/>
+	</Area>
 	<Resource name="mac_tex" compressed="false"/>
 	<Resource name="tik_tex" compressed="false"/>
 	<Resource name="kgr_tex" compressed="false"/>
