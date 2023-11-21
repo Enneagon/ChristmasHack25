@@ -198,3 +198,52 @@
     Return
     End
 }
+
+%
+%DEBUG
+%
+
+#new:Script $Script_GetGoombario
+{
+	Call  $Function_SetGoombarioEnabled
+    Call  $Function_ForcePartnerSwap    ( .Partner:Goombario  )
+    Return
+    End
+}
+
+#new:Function $Function_ForcePartnerSwap {
+    ADDIU     SP, SP, -18
+    SW        RA, 10 (SP)
+    LW        V0, C (A0)
+    JAL       ~Func:get_variable
+    LW        A1, 0 (V0)
+    JAL       ~Func:switch_to_partner
+    DADDU     A0, V0, R0
+    LW        RA, 10 (SP)
+    ADDIU     V0, R0, 2
+    JR        RA
+    ADDIU     SP, SP, 18
+}
+
+#new:Function $Function_SetGoombarioEnabled
+{
+    PUSH t0
+    ORI t0, r0, 0100
+    SAH t0, 8010F2AC %current partner
+    POP t0
+    JR RA
+    ORI v0, r0, 2
+}
+
+%
+%DEBUG
+%
+
+@ $Script_80246794 {
+    Set   *Var0  $ShakeTreeEvent_Tree1
+    Bind  $Script_ShakeTree_80246140 .Trigger:WallHammer ~Collider:o341 00000001 00000000
+    Bind  $Script_ShakeTree_80246140 .Trigger:PointBomb $TriggerCoord_80246784 00000001 00000000
+    Bind $Script_GetGoombario .Trigger:WallPressA ~Collider:GooombarioCollider 1 0
+    Return
+    End
+}

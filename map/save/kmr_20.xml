@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map name="kmr_20" author="unnamed" background="yki_bg" textures="kmr_tex">
 	<Editor>
-		<Camera pos="506.497406,127.024437,33.891262" pitch="10.440059" yaw="316.719299"/>
+		<Camera pos="240.400330,74.847725,181.629227" pitch="9.480054" yaw="299.599213"/>
 		<Camera pos="-60.000000,65536.000000,-39.000000"/>
 		<Camera pos="65536.000000,-80.000000,-39.000000"/>
-		<Camera pos="-60.000000,-80.000000,65536.000000"/>
+		<Camera pos="32.720497,13.802073,65536.000000"/>
 	</Editor>
 	<ModelTree>
 		<Node name="Root" id="126">
@@ -372,7 +372,7 @@
 		</Node>
 	</ModelTree>
 	<ColliderTree>
-		<Node name="Root" id="2B">
+		<Node name="Root" id="2C">
 			<Node name="g72" id="2A">
 				<Node name="g73" id="C">
 					<Node name="o307" id="0"/>
@@ -423,6 +423,7 @@
 					<Node name="o240" id="28"/>
 				</Node>
 			</Node>
+			<Node name="GooombarioCollider" id="2B"/>
 		</Node>
 	</ColliderTree>
 	<ZoneTree>
@@ -15897,8 +15898,50 @@
 	</Models>
 	<Colliders>
 		<Collider ver="0" flags="0">
-			<MapObject name="Root" id="2B"/>
+			<MapObject name="Root" id="2C"/>
 			<HitObject type="ROOT"/>
+		</Collider>
+		<Collider ver="0" flags="0">
+			<MapObject name="GooombarioCollider" id="2B"/>
+			<HitObject type="HIT"/>
+			<HitMesh ver="0">
+				<TriangleBatch ver="0">
+					<VertexTable>
+						<Vertex xyz="139,0,116"/>
+						<Vertex xyz="139,0,166" uv="1024,0"/>
+						<Vertex xyz="139,50,116" uv="0,1024"/>
+						<Vertex xyz="139,50,166" uv="1024,1024"/>
+						<Vertex xyz="189,0,166" uv="2048,0"/>
+						<Vertex xyz="189,50,166" uv="2048,1024"/>
+						<Vertex xyz="189,0,116" uv="3072,0"/>
+						<Vertex xyz="189,50,116" uv="3072,1024"/>
+						<Vertex xyz="139,0,116" uv="4096,0"/>
+						<Vertex xyz="139,50,116" uv="4096,1024"/>
+						<Vertex xyz="139,50,116" uv="0,-2048"/>
+						<Vertex xyz="139,50,166" uv="0,-1024"/>
+						<Vertex xyz="189,50,116" uv="1024,-2048"/>
+						<Vertex xyz="189,50,166" uv="1024,-1024"/>
+						<Vertex xyz="139,0,116" uv="2048,-2048"/>
+						<Vertex xyz="189,0,116" uv="3072,-2048"/>
+						<Vertex xyz="139,0,166" uv="2048,-1024"/>
+						<Vertex xyz="189,0,166" uv="3072,-1024"/>
+					</VertexTable>
+					<TriangleList>
+						<Triangle ijk="0,1,2"/>
+						<Triangle ijk="2,1,3"/>
+						<Triangle ijk="1,4,3"/>
+						<Triangle ijk="3,4,5"/>
+						<Triangle ijk="4,6,5"/>
+						<Triangle ijk="5,6,7"/>
+						<Triangle ijk="6,8,7"/>
+						<Triangle ijk="7,8,9"/>
+						<Triangle ijk="10,11,12"/>
+						<Triangle ijk="12,11,13"/>
+						<Triangle ijk="14,15,16"/>
+						<Triangle ijk="16,15,17"/>
+					</TriangleList>
+				</TriangleBatch>
+			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
 			<MapObject name="g72" id="2A" dumped="true" fileOffset="10FC"/>
