@@ -1,0 +1,200 @@
+@ $Script_8024FD70 {
+    Call  DisablePlayerInput    ( .True )
+    Thread
+        Wait  5`
+        Call  SetMusicTrack ( 00000000 .Song:MailCall 00000000 00000008 )
+    EndThread
+    Call  InterpPlayerYaw   (  90`  0` )
+    Call  SetPlayerPos  (  -50`  30`  -80` )
+    Call  SetNpcPos     ( 00000001  220`  30`  -80` )
+    Call  SetNpcPos     ( 00000000  720`  220`  -150` )
+    Call  SetNpcYaw     ( 00000000  270` )
+    Call  EnableGroup   ( ~Model:g94 .False )
+    Call  EnableGroup   ( ~Model:g100 .True )
+    Call  UseSettingsFrom   ( .Cam:Default  550`  0`  20` )
+    Call  SetPanTarget  ( .Cam:Default  550`  0`  20` )
+    Call  SetCamDistance    ( .Cam:Default  550` )
+    Call  SetCamPitch   ( .Cam:Default *Fixed[15.0] *Fixed[-14.0] )
+    Call  SetCamSpeed   ( .Cam:Default *Fixed[90.0] )
+    Call  PanToTarget   ( .Cam:Default 00000000 00000001 )
+    Wait  1`
+    Call  SetCamDistance    ( .Cam:Default  450` )
+    Call  SetCamSpeed   ( .Cam:Default *Fixed[0.7] )
+    Call  PanToTarget   ( .Cam:Default 00000000 00000001 )
+    Thread
+        Wait  10`
+        Call  MakeLerp  ( 00000000 00000046 0000003C .Easing:Linear )
+        Loop
+            Call  UpdateLerp ( )
+            Call  TranslateGroup    ( ~Model:g108 *Var0 00000000 00000000 )
+            SetF  *Var2  00000000
+            SubF  *Var2  *Var0
+            Call  TranslateGroup    ( ~Model:g106 *Var2 00000000 00000000 )
+            If  *Var1  ==  00000000
+                BreakLoop
+            EndIf
+            Wait  1`
+        EndLoop
+    EndThread
+    Thread
+        Wait  30`
+        Call  MakeLerp  ( 00000000 00000032 00000028 .Easing:Linear )
+        Loop
+            Call  UpdateLerp ( )
+            Call  TranslateGroup    ( ~Model:g109 *Var0 00000000 00000000 )
+            SetF  *Var2  00000000
+            SubF  *Var2  *Var0
+            Call  TranslateGroup    ( ~Model:g107 *Var2 00000000 00000000 )
+            If  *Var1  ==  00000000
+                BreakLoop
+            EndIf
+            Wait  1`
+        EndLoop
+    EndThread
+    Thread
+        Wait  50`
+        Call  MakeLerp  ( 00000000 00000032 00000028 .Easing:Linear )
+        Loop
+            Call  UpdateLerp ( )
+            Call  TranslateGroup    ( ~Model:g105 *Var0 00000000 00000000 )
+            Call  TranslateGroup    ( ~Model:g102 *Var0 00000000 00000000 )
+            SetF  *Var2  00000000
+            SubF  *Var2  *Var0
+            Call  TranslateGroup    ( ~Model:g103 *Var2 00000000 00000000 )
+            Call  TranslateGroup    ( ~Model:g104 *Var2 00000000 00000000 )
+            Call  TranslateGroup    ( ~Model:g101 *Var2 00000000 00000000 )
+            If  *Var1  ==  00000000
+                BreakLoop
+            EndIf
+            Wait  1`
+        EndLoop
+    EndThread
+    Wait  120`
+    Call  NpcFlyTo  ( 00000000  430`  20`  -165`  60`  -10` .Easing:Linear )
+    Call  InterpNpcYaw      ( 00000000  45`  10` )
+    Wait  20`
+    Call  PlaySoundAtNpc    ( 00000000 000000E0 00000000 )
+    Thread
+        Call  TranslateModel    ( ~Model:o222 00000002 00000000 00000000 )
+        Call  TranslateModel    ( ~Model:o223 00000002 00000000 00000000 )
+        Call  TranslateModel    ( ~Model:o224 00000002 00000000 00000000 )
+        Wait  1`
+        Call  TranslateModel    ( ~Model:o222 FFFFFFFD 00000000 00000000 )
+        Call  TranslateModel    ( ~Model:o223 FFFFFFFD 00000000 00000000 )
+        Call  TranslateModel    ( ~Model:o224 FFFFFFFD 00000000 00000000 )
+        Wait  1`
+        Call  TranslateModel    ( ~Model:o222 00000002 00000000 00000000 )
+        Call  TranslateModel    ( ~Model:o223 00000002 00000000 00000000 )
+        Call  TranslateModel    ( ~Model:o224 00000002 00000000 00000000 )
+        Wait  1`
+        Call  TranslateModel    ( ~Model:o222 FFFFFFFD 00000000 00000000 )
+        Call  TranslateModel    ( ~Model:o223 FFFFFFFD 00000000 00000000 )
+        Call  TranslateModel    ( ~Model:o224 FFFFFFFD 00000000 00000000 )
+        Wait  1`
+        Call  TranslateModel    ( ~Model:o222 00000000 00000000 00000000 )
+        Call  TranslateModel    ( ~Model:o223 00000000 00000000 00000000 )
+        Call  TranslateModel    ( ~Model:o224 00000000 00000000 00000000 )
+    EndThread
+    Wait  35`
+    Call  InterpNpcYaw  ( 00000000  220`  5` )
+    Wait  10`
+    Call  SpeakToPlayer ( 00000000 00040006 00040001 00000005 0000001E ) % Mail call!
+    Wait  10`
+    Call  NpcFlyTo      ( 00000000  360`  260`  60`  60`  -10` .Easing:Linear )
+    Wait  30`
+    Exec  $Script_8024FCE4
+    Wait  10`
+    Call  SetNpcAnimation   ( 00000001 0082000A )
+    Exec  $Script_8024F5A4 *VarA
+    Call  SetNpcSpeed   ( 00000001 *Fixed[4.0] )
+    Call  NpcMoveTo     ( 00000001  450`  -80`  0` )
+    Call  NpcMoveTo     ( 00000001  430`  -165`  0` )
+    Call  SetNpcAnimation   ( 00000001 00820004 )
+    Kill  *VarA
+    Wait  20`
+    Call  PlaySoundAtNpc    ( 00000001 000000E0 00000000 )
+    Thread
+        Call  TranslateModel    ( ~Model:o222 00000001 00000000 00000000 )
+        Call  TranslateModel    ( ~Model:o223 00000001 00000000 00000000 )
+        Call  TranslateModel    ( ~Model:o224 00000001 00000000 00000000 )
+        Wait  1`
+        Call  TranslateModel    ( ~Model:o222 FFFFFFFE 00000000 00000000 )
+        Call  TranslateModel    ( ~Model:o223 FFFFFFFE 00000000 00000000 )
+        Call  TranslateModel    ( ~Model:o224 FFFFFFFE 00000000 00000000 )
+        Wait  1`
+        Call  TranslateModel    ( ~Model:o222 00000001 00000000 00000000 )
+        Call  TranslateModel    ( ~Model:o223 00000001 00000000 00000000 )
+        Call  TranslateModel    ( ~Model:o224 00000001 00000000 00000000 )
+        Wait  1`
+        Call  TranslateModel    ( ~Model:o222 FFFFFFFE 00000000 00000000 )
+        Call  TranslateModel    ( ~Model:o223 FFFFFFFE 00000000 00000000 )
+        Call  TranslateModel    ( ~Model:o224 FFFFFFFE 00000000 00000000 )
+        Wait  1`
+        Call  TranslateModel    ( ~Model:o222 00000000 00000000 00000000 )
+        Call  TranslateModel    ( ~Model:o223 00000000 00000000 00000000 )
+        Call  TranslateModel    ( ~Model:o224 00000000 00000000 00000000 )
+    EndThread
+    Wait  2`
+    Call  SetNpcAnimation   ( 00000001 00820005 )
+    Wait  40`
+    Call  InterpNpcYaw  ( 00000001  270`  5` )
+    Call  SetNpcAnimation   ( 00000001 0082000B )
+    Exec  $Script_8024F5A4 *VarA
+    Call  NpcMoveTo     ( 00000001  450`  -80`  0` )
+    Call  NpcMoveTo     ( 00000001  290`  -70`  0` )
+    Kill  *VarA
+    Call  EnableGroup   ( ~Model:g20 .True )
+    Call  EnableGroup   ( ~Model:g21 .True )
+    Call  EnableGroup   ( ~Model:g49 .True )
+    Call  EnableModel   ( ~Model:g56 .True )
+    Call  $Function_80241C9C ( )
+    Call  RotateGroup   ( ~Model:g60 0000005A 00000001 00000000 00000000 )
+    Call  RotateGroup   ( ~Model:g34 0000005A FFFFFFFF 00000000 00000000 )
+    Call  EnableGroup   ( ~Model:g60 .False )
+    Call  EnableGroup   ( ~Model:g34 .False )
+    Call  UseSettingsFrom   ( .Cam:Default  250`  30`  -80` )
+    Call  SetPanTarget  ( .Cam:Default  250`  30`  -80` )
+    Call  SetCamSpeed   ( .Cam:Default *Fixed[90.0] )
+    Call  PanToTarget   ( .Cam:Default 00000000 00000001 )
+    Call  $Function_80241D1C ( )
+    Exec  $Script_8024FB88
+    Wait  10`
+    Call  SetNpcAnimation   ( 00000001 00820009 )
+    Exec  $Script_8024F5A4 *VarA
+    Call  SetNpcSpeed   ( 00000001 *Fixed[2.0] )
+    Call  NpcMoveTo     ( 00000001  240`  -80`  0` )
+    Call  SetNpcAnimation   ( 00000001 00820005 )
+    Kill  *VarA
+    Call  SpeakToPlayer ( 00000001 00820015 00820005 00000000 002F0001 ) % Hey, Mario! We got a letter from Princess Peach!
+    Wait  10`
+    Exec  $Script_8024FAAC
+    Thread
+        Call  SetNpcAnimation   ( 00000001 00820009 )
+        Exec  $Script_8024F5A4 *VarA
+        Call  NpcMoveTo ( 00000001  230`  -130`  0` )
+        Call  NpcMoveTo ( 00000001  110`  -110`  0` )
+        Call  SetNpcAnimation   ( 00000001 00820005 )
+        Kill  *VarA
+        Call  SetNpcVar ( 00000001 00000000 00000000 )
+    EndThread
+    Wait  20`
+    Call  802D1270  ( 00000046 FFFFFFB0 *Fixed[2.0] )
+    Call  802D1270  ( 00000046 FFFFFF92 *Fixed[2.0] )
+    Wait  10`
+    Call  SpeakToPlayer     ( 00000001 00820015 00820005 00000000 002F0002 ) % I'll read it to you, OK?
+    Call  SetNpcAnimation   ( 00000001 00820018 )
+    Wait  20`
+    Call  SetNpcAnimation   ( 00000001 00820006 )
+    Call  SpeakToPlayer     ( 00000001 00820016 00820006 00000000 00000021 ) % All right, let's see...
+    Call  SetNpcAnimation   ( 00000001 00820019 )
+    Wait  10`
+    Call  SetMusicTrack     ( 00000000 .Song:PrisonerPeachTheme 00000000 00000008 )
+    Wait  5`
+    Call  ClearAmbientSounds    ( 000000FA )
+    Call  GotoMapSpecial    ( $ASCII_80253008 00000003 00000007 ) % osr_00
+    Wait  15`
+    Call  ClearAmbientSounds    ( 000000FA )
+    Wait  100`
+    Return
+    End
+}

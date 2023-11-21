@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map name="kmr_20" author="unnamed" background="yki_bg" textures="kmr_tex">
 	<Editor>
-		<Camera pos="441.604431,110.926109,49.614143" pitch="5.640059" yaw="314.479950"/>
+		<Camera pos="506.497406,127.024437,33.891262" pitch="10.440059" yaw="316.719299"/>
 		<Camera pos="-60.000000,65536.000000,-39.000000"/>
 		<Camera pos="65536.000000,-80.000000,-39.000000"/>
 		<Camera pos="-60.000000,-80.000000,65536.000000"/>

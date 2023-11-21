@@ -1,0 +1,22 @@
+@ $Script_80243470 {
+    Call  DisablePlayerInput    ( .True )
+    Call  UseSettingsFrom       ( .Cam:Default  0`  0`  0` )
+    Call  SetPanTarget  ( .Cam:Default  0`  0`  0` )
+    Call  SetCamSpeed   ( .Cam:Default *Fixed[90.0] )
+    Call  SetCamDistance        ( .Cam:Default  775` )
+    Call  SetCamPitch   ( .Cam:Default  20`  -19` )
+    Call  PanToTarget   ( .Cam:Default 00000000 00000001 )
+    Call  $Function_80240380    ( 00000002 00000000 00000003 )
+    Call  $Function_80240380    ( 00000001 FFFFFFFF 00000003 )
+    Call  $Function_80240678    ( 000000C8 000000C8 000000C8 00000028 00000028 00000028 )
+    Call  $Function_802406E0 ( )
+    Wait  15`
+    Call  ShowMessageAtScreenPos    ( 00000022  160`  40` ) %
+    Wait  12`
+    Call  ShowMessageAtScreenPos    ( 002F0003  160`  40` ) % I'm throwing a party at my castle today! Mario and ...
+    Wait  3`
+    Call  GotoMapSpecial        ( $ASCII_802437B0 00000001 00000007 ) % kmr_20
+    Wait  40`
+    Return
+    End
+}

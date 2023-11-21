@@ -1,173 +1,199 @@
-#string:2F:000
+#message:2F:000
 {
 	[Style Right]
 	Mail call![Wait][End]
 }
 
-#string:2F:001
+#message:2F:001
 {
-	[CenterX 159]Today...[End]
+	[Style Right]
+	Hey, Mario! You'll never believe[BR]
+	what we just got in the mail![Wait][End]
 }
 
-#string:2F:002
+#message:2F:002
 {
-	[CenterX 159]I'm going to tell the story of[BR]
-	"Star Spirits and Good Wishes."[End]
+	[Style Right]
+	Okay, you probably guessed.[BR]
+	But you can't blame me for[BR]
+	wanting to jazz things up a[BR]
+	little, right?[BR]
+	[Wait][Next]
+	It's from the Princess. I'll read[BR]
+	it to you, okay?[Wait][End]
 }
 
-#string:2F:003
+#message:2F:003
 {
-	[CenterX 159]Far, far away, beyond the sky,[End]
+	[Style Narrate]
+	[Pause 4][InputOn]I'm throwing a party at the big[BR]
+	tree west of Toad Town![BR]
+	[Pause 10]Mario and Luigi, I would be[BR]
+	honored if you both could attend.[BR]
+	[Wait][BR]
+	[Next]I've entrusted Parakarry with[BR]
+	bringing presents for the whole[BR]
+	town to this party.
+	[Wait][BR]
+	[Next]
+	It's only one delivery, so there's[BR]
+	absolutely no way he can possibly[BR]
+	screw this up. [Pause 10]See you soon!
+	[Wait][BR][Next]
+	[Pause 15][Right 110]Sincerely, Peach[BR][Pause 20]
+	[Down 5][Size 10]You did get me something, right?
+	[Wait][Yield][End]
 }
 
-#string:2F:004
-{
-	[CenterX 159]way above the clouds,[End]
-}
-
-#string:2F:005
+#message:2F:004
 {
 	[CenterX 159]it's been said that there's[BR]
 	a haven where the Stars live.[End]
 }
 
-#string:2F:006
+#message:2F:005
+{
+	[CenterX 159]it's been said that there's[BR]
+	a haven where the Stars live.[End]
+}
+
+#message:2F:006
 {
 	[CenterX 159]In the sanctuary of Star Haven[End]
 }
 
-#string:2F:007
+#message:2F:007
 {
 	[CenterX 159]there rests a fabled treasure[BR]
 	called the Star Rod,[End]
 }
 
-#string:2F:008
+#message:2F:008
 {
 	[CenterX 159]which has the power to grant[BR]
 	all wishes.[End]
 }
 
-#string:2F:009
+#message:2F:009
 {
 	[CenterX 159]Using this wondrous Star Rod,[BR]
 	the seven revered Star Spirits[End]
 }
 
-#string:2F:00A
+#message:2F:00A
 {
 	[CenterX 159]watched over our peaceful world[End]
 }
 
-#string:2F:00B
+#message:2F:00B
 {
 	[CenterX 159]carefully...very carefully.[End]
 }
 
-#string:2F:00C
+#message:2F:00C
 {
 	[CenterX 159]And then...[End]
 }
 
-#string:2F:00D
+#message:2F:00D
 {
 	[CenterX 159]Oh dear... What the...?[End]
 }
 
-#string:2F:00E
+#message:2F:00E
 {
 	[CenterX 159]Who stuck that weird thing[BR]
 	into this story?[End]
 }
 
-#string:2F:00F
+#message:2F:00F
 {
 	[CenterX 159]Ha ha ha! Yeah! I did![End]
 }
 
-#string:2F:010
+#message:2F:010
 {
 	[CenterX 159][Wave]Gwa ha ha ha ha ha ha ha!![BR]
 	[/fx][End]
 }
 
-#string:2F:011
+#message:2F:011
 {
 	[CenterX 159]So I can, at long last, beat my[BR]
 	archenemy, Mario,[End]
 }
 
-#string:2F:012
+#message:2F:012
 {
 	[CenterX 159]I'll take this Star Rod![End]
 }
 
-#string:2F:013
+#message:2F:013
 {
 	[CenterX 159]Do it, Kammy Koopa!![End]
 }
 
-#string:2F:014
+#message:2F:014
 {
 	[CenterX 159][End]
 }
 
-#string:2F:015
+#message:2F:015
 {
 	[CenterX 159]No, you mustn't do that!![End]
 }
 
-#string:2F:016
+#message:2F:016
 {
 	[CenterX 159]Yeah! Now let's try using it![End]
 }
 
-#string:2F:017
+#message:2F:017
 {
 	[CenterX 159]Stop it! Cut it out, Bowser!![End]
 }
 
-#string:2F:018
+#message:2F:018
 {
 	[CenterX 159]You're changing the story!![End]
 }
 
-#string:2F:019
+#message:2F:019
 {
 	[CenterX 159]Bwa ha ha ha ha... We did it![End]
 }
 
-#string:2F:01A
+#message:2F:01A
 {
 	[CenterX 159]That was a piece o' cake!![BR]
 	Gwaa ha ha![End]
 }
 
-#string:2F:01B
+#message:2F:01B
 {
 	[CenterX 159]Now Star Kids may rise to the[BR]
 	Haven to deliver people's wishes...[End]
 }
 
-#string:2F:01C
+#message:2F:01C
 {
 	[CenterX 159]...but those wishes will not come[BR]
 	true.[BR]
 	[End]
 }
 
-#string:2F:01D
+#message:2F:01D
 {
 	[CenterX 159]Whatever can they do...?[End]
 }
 
-#string:2F:01E
+#message:2F:01E
 {
 	[Style Right]
 	Mail call![Wait][End]
 }
 
-#string:2F:01F
+#message:2F:01F
 {
 	[Style Right]
 	Hey, Mario![BR]
@@ -175,24 +201,24 @@
 	Peach![Wait][End]
 }
 
-#string:2F:020
+#message:2F:020
 {
 	[Style Right]
 	I'll read it to you, OK?[Wait][End]
 }
 
-#string:2F:021
+#message:2F:021
 {
 	[Style Right]
 	All right, let's see...[Wait][End]
 }
 
-#string:2F:022
+#message:2F:022
 {
 	[Image index=0 pos=85,97 hasBorder=1 alpha=255 fadeAmount=15][Yield][End]
 }
 
-#string:2F:023
+#message:2F:023
 {
 	[Style Narrate]
 	[Pause 4][InputOn]I'm throwing a party at my[BR]
@@ -212,7 +238,7 @@
 	[Wait][Yield][End]
 }
 
-#string:2F:024
+#message:2F:024
 {
 	[Style Right]
 	What a magnificent castle![BR]
@@ -221,7 +247,7 @@
 	already here.[Wait][End]
 }
 
-#string:2F:025
+#message:2F:025
 {
 	[Style Right]
 	Say, Mario, why don't you go see[BR]
@@ -233,7 +259,7 @@
 	door up there, you can open it.[Wait][End]
 }
 
-#string:2F:026
+#message:2F:026
 {
 	[Style Right]
 	Mario! Where are you going?[BR]
@@ -242,7 +268,7 @@
 	You'd better at least say hello![Wait][End]
 }
 
-#string:2F:027
+#message:2F:027
 {
 	[Style Right]
 	Ah! Salutations, Mario! [BR]
@@ -253,7 +279,7 @@
 	the north of here.[Wait][End]
 }
 
-#string:2F:028
+#message:2F:028
 {
 	[Style Right]
 	Princess Peach is such a [BR]
@@ -265,14 +291,14 @@
 	the Shiver region someday![Wait][End]
 }
 
-#string:2F:029
+#message:2F:029
 {
 	[Style Right]
 	Mario, you're looking well![BR]
 	[Pause 15]Please enjoy the party, OK?[Wait][End]
 }
 
-#string:2F:02A
+#message:2F:02A
 {
 	[Style Right]
 	Wow! I've never seen so many[BR]
@@ -284,7 +310,7 @@
 	never been to, huh?[Wait][End]
 }
 
-#string:2F:02B
+#message:2F:02B
 {
 	[Style Right]
 	Hey...urp...Mario![BR]
@@ -299,7 +325,7 @@
 	To the buffet table!!! [Wait][End]
 }
 
-#string:2F:02C
+#message:2F:02C
 {
 	[Style Right]
 	I think Princess Peach has been[BR]
@@ -310,7 +336,7 @@
 	[Pause 10]hee hee hee... [Pause 5]How cute...[Wait][End]
 }
 
-#string:2F:02D
+#message:2F:02D
 {
 	[Style Right]
 	Oh! Welcome, Mario![BR]
@@ -322,13 +348,13 @@
 	for you.[Wait][End]
 }
 
-#string:2F:02E
+#message:2F:02E
 {
 	[Style Right]
 	Welcome to Peach's Castle![Wait][End]
 }
 
-#string:2F:02F
+#message:2F:02F
 {
 	[Style Right]
 	Princess Peach went into her[BR]
@@ -337,7 +363,7 @@
 	She must be a bit tired.[Wait][End]
 }
 
-#string:2F:030
+#message:2F:030
 {
 	[Style Right]
 	Wow...[BR]
@@ -348,7 +374,7 @@
 	Peach's Castle forever![Wait][End]
 }
 
-#string:2F:031
+#message:2F:031
 {
 	[Style Right]
 	Oh, hello there, Mario![BR]
@@ -367,7 +393,7 @@
 	Now I have to go shopping![Wait][End]
 }
 
-#string:2F:032
+#message:2F:032
 {
 	[Style Right]
 	I've been practicing cooking.[BR]
@@ -382,7 +408,7 @@
 	exceptionally fun![Wait][End]
 }
 
-#string:2F:033
+#message:2F:033
 {
 	[Style Right]
 	Greetings, Mario![BR]
@@ -395,7 +421,7 @@
 	[Pause 10]Yep, our future looks bright![Wait][End]
 }
 
-#string:2F:034
+#message:2F:034
 {
 	[Style Right]
 	I come from a desert town called[BR]
@@ -413,7 +439,7 @@
 	tell everyone about it.[Wait][End]
 }
 
-#string:2F:035
+#message:2F:035
 {
 	[Style Right]
 	I'm a Nomadimouse, and I come[BR]
@@ -425,7 +451,7 @@
 	home away from home.[Wait][End]
 }
 
-#string:2F:036
+#message:2F:036
 {
 	[Style Right]
 	I'm here on behalf of lovely[BR]
@@ -437,7 +463,7 @@
 	souvenirs with Frost T.![Wait][End]
 }
 
-#string:2F:037
+#message:2F:037
 {
 	[Style Right]
 	I come from Koopa Village, which[BR]
@@ -448,7 +474,7 @@
 	[Pause 10]What a wonderful lady she is![HEART][Wait][End]
 }
 
-#string:2F:038
+#message:2F:038
 {
 	[Style Right]
 	Well... [Pause 5]Today, we have guests[BR]
@@ -463,7 +489,7 @@
 	[Pause 10]I... [Pause 5]I'm sorry! Excuse me![Wait][End]
 }
 
-#string:2F:039
+#message:2F:039
 {
 	[Style Right]
 	Does Princess Peach have a[BR]
@@ -474,7 +500,7 @@
 	special indeed...[Wait][End]
 }
 
-#string:2F:03A
+#message:2F:03A
 {
 	[Style Right]
 	Do you know of a place called[BR]
@@ -488,7 +514,7 @@
 	ask the princess to go there...[Wait][End]
 }
 
-#string:2F:03B
+#message:2F:03B
 {
 	[Style Right]
 	Hello, Mario.[BR]
@@ -499,7 +525,7 @@
 	[Pause 10]It really suits you![HEART][Wait][End]
 }
 
-#string:2F:03C
+#message:2F:03C
 {
 	[Style Right]
 	I... [Pause 5]I'm just a trainee, sir.[BR]
@@ -511,7 +537,7 @@
 	[PrintRising]Thump [Pause 3]thump [Pause 3]thump [Pause 3]thump[/fx][Pause 3]...[Wait][End]
 }
 
-#string:2F:03D
+#message:2F:03D
 {
 	[Style Right]
 	This is Princess Peach's room,[BR]
@@ -519,7 +545,7 @@
 	at the moment.[Wait][End]
 }
 
-#string:2F:03E
+#message:2F:03E
 {
 	[Style Right]
 	Huh?[BR]
@@ -530,7 +556,7 @@
 	her first, Mario! [Wait][End]
 }
 
-#string:2F:03F
+#message:2F:03F
 {
 	[Style Right]
 	I said NO, and that means NO.[BR]
@@ -538,7 +564,7 @@
 	in there![Wait][End]
 }
 
-#string:2F:040
+#message:2F:040
 {
 	[Style Right]
 	Boy, you're persistent![BR]
@@ -548,13 +574,13 @@
 	and don't touch anything![Wait][End]
 }
 
-#string:2F:041
+#message:2F:041
 {
 	[Style Right]
 	I envy you, Mario...[Wait][End]
 }
 
-#string:2F:042
+#message:2F:042
 {
 	[Style Right]
 	How was it?[BR]
@@ -562,14 +588,14 @@
 	seen the inside of her room...[Wait][End]
 }
 
-#string:2F:043
+#message:2F:043
 {
 	[Style Inspect]
 	What a big fireplace![BR]
 	[Pause 10]And what a cozy fire![Wait][End]
 }
 
-#string:2F:044
+#message:2F:044
 {
 	[Style Inspect]
 	Her dresses are beautiful, but[BR]
@@ -578,20 +604,20 @@
 	of dress.[Wait][End]
 }
 
-#string:2F:045
+#message:2F:045
 {
 	[Style Inspect]
 	These are cosmetics.[BR]
 	[Pause 10]Mario looks fine without them.[Wait][End]
 }
 
-#string:2F:046
+#message:2F:046
 {
 	[Style Inspect]
 	A framed photo of Mario![Wait][End]
 }
 
-#string:2F:047
+#message:2F:047
 {
 	[Style Inspect]
 	Quite a fluffy bed.[BR]
@@ -599,14 +625,14 @@
 	designed for sweet dreams.[Wait][End]
 }
 
-#string:2F:048
+#message:2F:048
 {
 	[Style Inspect]
 	A vase full of lovely flowers.[BR]
 	[Pause 10]They smell heavenly.[Wait][End]
 }
 
-#string:2F:049
+#message:2F:049
 {
 	[Style Right]
 	It's nice and quiet here with[BR]
@@ -614,14 +640,14 @@
 	[Pause 10]Ahh...so pleasant.[Wait][End]
 }
 
-#string:2F:04A
+#message:2F:04A
 {
 	[Style Right]
 	Princess Peach went into her[BR]
 	private chambers just now.[Wait][End]
 }
 
-#string:2F:04B
+#message:2F:04B
 {
 	[Style Right]
 	Oh, Mario![BR]
@@ -630,7 +656,7 @@
 	[Pause 20]Thank you![HEART][Wait][End]
 }
 
-#string:2F:04C
+#message:2F:04C
 {
 	[Style Right]
 	I was just resting a bit. It[BR]
@@ -642,7 +668,7 @@
 	two of us? [Wait][End]
 }
 
-#string:2F:04D
+#message:2F:04D
 {
 	[Style Right]
 	It was a lovely day today, so I'm[BR]
@@ -651,14 +677,14 @@
 	[Pause 10]Would you accompany me, Mario?[Wait][End]
 }
 
-#string:2F:04E
+#message:2F:04E
 {
 	[Style Right]
 	Oh! Are you all right, Mario?[BR]
 	[Pause 10]What in the world was that?[Wait][End]
 }
 
-#string:2F:04F
+#message:2F:04F
 {
 	[Style Right]
 	Oh my! Look, Mario![BR]
@@ -666,7 +692,7 @@
 	[Pause 10]... But I can see stars outside![Wait][End]
 }
 
-#string:2F:050
+#message:2F:050
 {
 	[Style Right]
 	[Voice Bowser][PrintRising]Gwaa ha ha ha ha ha![BR]
@@ -674,7 +700,7 @@
 	Peach![Wait][End]
 }
 
-#string:2F:051
+#message:2F:051
 {
 	[Style Right]
 	... Bowser![BR]
@@ -685,7 +711,7 @@
 	Whatever did you do?[Wait][End]
 }
 
-#string:2F:052
+#message:2F:052
 {
 	[Style Right]
 	[Voice Bowser][Down 8][PrintRising][Wave][Size 32]Gwa ha ha ha![BR]
@@ -700,7 +726,7 @@
 	[Pause 10]Now you will obey ME![Wait][End]
 }
 
-#string:2F:053
+#message:2F:053
 {
 	[Style Right]
 	[Voice Bowser]Huh!? What?[BR]
@@ -714,7 +740,7 @@
 	nothing you can do this time.[Wait][End]
 }
 
-#string:2F:054
+#message:2F:054
 {
 	[Style Right]
 	Haven't you learned your lesson[BR]
@@ -724,7 +750,7 @@
 	[Pause 10]Why don't you give up already?[Wait][End]
 }
 
-#string:2F:055
+#message:2F:055
 {
 	[Style Right]
 	[Voice Bowser]True, true, I have had my[BR]
@@ -734,20 +760,20 @@
 	[PrintRising]This time I'm gonna win![Wait][End]
 }
 
-#string:2F:056
+#message:2F:056
 {
 	[Style Right]
 	[Voice Bowser]OK, tough guy![BR]
 	[Pause 10]Let's go![Wait][End]
 }
 
-#string:2F:057
+#message:2F:057
 {
 	[Style Right]
 	Mario, [Pause 5]you can do it![Wait][End]
 }
 
-#string:2F:058
+#message:2F:058
 {
 	[Style Right]
 	[Voice Bowser]Good old Mario...always fighting.[BR]
@@ -757,7 +783,7 @@
 	attacks won't beat me![Wait][End]
 }
 
-#string:2F:059
+#message:2F:059
 {
 	[Style Right]
 	[Voice Bowser]Take a look at this![BR]
@@ -773,14 +799,14 @@
 	can't beat me, Mario![Wait][End]
 }
 
-#string:2F:05A
+#message:2F:05A
 {
 	[Style Right]
 	[Voice Bowser][PrintRising]Gwa ha ha ha ha ha![BR]
 	[/fx]How do you like that, Mario?![Wait][End]
 }
 
-#string:2F:05B
+#message:2F:05B
 {
 	[Style Right]
 	[Voice Bowser][PrintRising]Gwa ha ha ha ha ha![BR]
@@ -789,7 +815,7 @@
 	'cause that didn't hurt at all![Wait][End]
 }
 
-#string:2F:05C
+#message:2F:05C
 {
 	[Style Right]
 	[Voice Bowser]Yup, just as I expected. Mario's[BR]
@@ -803,13 +829,13 @@
 	[PrintRising]Good night![Wait][End]
 }
 
-#string:2F:05D
+#message:2F:05D
 {
 	[Style Right]
 	[PrintRising]Oh no! Mario! Get up![Wait][End]
 }
 
-#string:2F:05E
+#message:2F:05E
 {
 	[Style Right]
 	[Voice Bowser]Yes! Oh, yeah! I did it![BR]
@@ -818,7 +844,7 @@
 	rival Mario! Yessss![Wait][End]
 }
 
-#string:2F:05F
+#message:2F:05F
 {
 	[Style Right]
 	Congratulations on your victory,[BR]
@@ -826,7 +852,7 @@
 	[Pause 5]That's why you're the King![Wait][End]
 }
 
-#string:2F:060
+#message:2F:060
 {
 	[Style Right]
 	[Voice Bowser]As long as I have this Star Rod,[BR]
@@ -834,7 +860,7 @@
 	[Pause 10]No one can stop me now![Wait][End]
 }
 
-#string:2F:061
+#message:2F:061
 {
 	[Style Right]
 	[Voice Bowser]Well, well, well...[BR]
@@ -843,7 +869,7 @@
 	now, that's for sure.[Wait][End]
 }
 
-#string:2F:062
+#message:2F:062
 {
 	[Style Right]
 	[PrintRising]Oh, no! Mario------!![Wait][End]
