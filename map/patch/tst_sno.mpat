@@ -10,6 +10,7 @@
     Call GetModelCenter ( ~Model:SnowModel3 )
     Set *Var1 0`
     Call  MakeItemEntity ( .Item:Mushroom *Var0 *Var1 *Var2 .ItemSpawnMode:Fixed_SpawnAlways_NeverVanish 00000000 )
+    Call  MakeNpcs  ( .False $NpcGroupList_Test )
     Exec  $Script_EnterMap
     Return
     End
@@ -132,6 +133,35 @@
     Call  ModifyColliderFlags   ( 00000000 ~Collider:SnowCollider3 7FFFFE00 )
     Unbind
     Call DisablePlayerInput ( .False )
+    Return
+    End
+}
+
+#new:NpcGroupList $NpcGroupList_Test
+{
+	00000001 $NpcGroup_Test 00000000
+    00000000 00000000 00000000
+}
+
+#new:NpcGroup $NpcGroup_Test
+{
+	00000000 $NpcSettings_Standard ~Vec3f:CandyClubba
+	00000001 $Script_Init_Clubba 00000000 00000000 00000000
+	~NoDrops
+	~Movement:CandyClubba
+	~AnimationTable:CandyClubba
+	00000000 00000000 00000000 00000000 % Tattle ID
+}
+
+#new:NpcSettings $NpcSettings_Standard
+{
+	00000000 001E0018 00000000 00000000 00000000 00000000 00000000 00000000
+	00000000 00000000 00630000
+}
+
+#new:Script $Script_Init_Clubba
+{
+    Call SetNpcYaw ( .Npc:Self 270` )
     Return
     End
 }

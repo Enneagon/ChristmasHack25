@@ -4,3 +4,6 @@
 # Original game data
 */src/[0-9A-F][0-9A-F]
 player/src/shared
+
+# New Enemies
+!/npc/src/3A

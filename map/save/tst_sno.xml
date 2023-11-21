@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map name="tst_sno" author="unnamed" background="kmr_bg" textures="sam_tex">
 	<Editor>
-		<Camera pos="7.361142,190.570129,203.809372" pitch="26.400051" yaw="359.919952"/>
+		<Camera pos="9.890642,40.728619,203.909744" pitch="14.719975" yaw="357.359894"/>
 		<Camera pos="-146.163834,65536.000000,122.424728"/>
 		<Camera pos="65536.000000,-50.000000,-93.458679"/>
 		<Camera pos="-72.855209,68.638519,65536.000000"/>
@@ -75,13 +75,14 @@
 		</Node>
 	</ZoneTree>
 	<MarkerTree>
-		<Node name="Root" id="4">
+		<Node name="Root" id="5">
 			<Node name="Entrances" id="3">
 				<Node name="entry_n" id="FFFFFFFF"/>
 				<Node name="entry_e" id="0"/>
 				<Node name="entry_s" id="1"/>
 				<Node name="entry_w" id="2"/>
 			</Node>
+			<Node name="CandyClubba" id="4"/>
 		</Node>
 	</MarkerTree>
 	<LightSets>
@@ -2485,7 +2486,12 @@
 	</Zones>
 	<Markers>
 		<Marker ver="4" type="Root">
-			<MapObject name="Root" id="4"/>
+			<MapObject name="Root" id="5"/>
+		</Marker>
+		<Marker ver="4" type="NPC" pos="0,0,100" yaw="0.000000">
+			<MapObject name="CandyClubba" id="4"/>
+			<Movement type="Stationary" data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
+			<Sprite sprite="3A" palette="0" animations="3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
 		</Marker>
 		<Marker ver="4" type="Group">
 			<MapObject name="Entrances" id="3"/>
