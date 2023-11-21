@@ -1,0 +1,137 @@
+@ $Script_Main {
+    Call  SetCamPerspective  ( .Cam:Default 00000003 00000019 00000010 00001000 )
+    Call  SetCamBGColor      ( .Cam:Default 00000000 00000000 00000000 )
+    Call  SetCamEnabled      ( .Cam:Default .True
+    Call  SetCamLeadPlayer   ( .Cam:Default .False )
+    Exec  $Script_SetupMusic
+    Bind  $Script_MakeSnowStairs .Trigger:WallPressA ~Collider:SnowCollider1 00000001 00000000
+    Bind  $Script_MakeSnowman .Trigger:WallPressA ~Collider:SnowCollider2 00000001 00000000
+    Bind  $Script_RemoveSnow .Trigger:WallPressA ~Collider:SnowCollider3 00000001 00000000
+    Call GetModelCenter ( ~Model:SnowModel3 )
+    Set *Var1 0`
+    Call  MakeItemEntity ( .Item:Mushroom *Var0 *Var1 *Var2 .ItemSpawnMode:Fixed_SpawnAlways_NeverVanish 00000000 )
+    Exec  $Script_EnterMap
+    Return
+    End
+}
+
+#new:Script $Script_MakeSnowStairs
+{
+    Call DisablePlayerInput ( .True )
+    Thread
+        Call MakeLerp ( 0` -50` 120` .Easing:Linear )
+        Loop
+            Call  UpdateLerp ( )
+            Call  TranslateModel ( ~Model:SnowModel1 00000000 *Var0  00000000 )
+            Wait  1`
+            If  *Var1  ==  00000000
+                BreakLoop
+            EndIf
+        EndLoop
+    EndThread
+    Thread
+        Call MakeLerp ( 0` 50` 120` .Easing:Linear )
+        Loop
+            Call  UpdateLerp ( )
+            Call  TranslateModel ( ~Model:StaircaseModel 00000000 *Var0  00000000 )
+            Wait  1`
+            If  *Var1  ==  00000000
+                BreakLoop
+            EndIf
+        EndLoop
+    EndThread
+    Call GetModelCenter ( ~Model:SnowModel1 )
+    Add *Var1 5`
+    Call  PlayEffect    ( ~FX:BigSmokePuff *Var0 *Var1 *Var2 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 )
+    Call PlaySoundAtModel ( ~Model:SnowModel1 .Sound:MoleDig 00000000 )
+    Wait 30`
+    Call  PlayEffect    ( ~FX:BigSmokePuff *Var0 *Var1 *Var2 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 )
+    Call PlaySoundAtModel ( ~Model:SnowModel1 .Sound:MoleDig 00000000 )
+    Wait 30`
+    Call  PlayEffect    ( ~FX:BigSmokePuff *Var0 *Var1 *Var2 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 )
+    Call PlaySoundAtModel ( ~Model:SnowModel1 .Sound:MoleDig 00000000 )
+    Wait 30`
+    Call  PlayEffect    ( ~FX:BigSmokePuff *Var0 *Var1 *Var2 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 )
+    Call PlaySoundAtModel ( ~Model:SnowModel1 .Sound:MoleDig 00000000 )
+    Wait 30`
+    Call  ModifyColliderFlags   ( 00000000 ~Collider:SnowCollider1 7FFFFE00 )
+    Unbind
+    Call DisablePlayerInput ( .False )
+    Return
+    End
+}
+
+#new:Script $Script_MakeSnowman
+{
+    Call DisablePlayerInput ( .True )
+    Thread
+        Call MakeLerp ( 0` -50` 120` .Easing:Linear )
+        Loop
+            Call  UpdateLerp ( )
+            Call  TranslateModel ( ~Model:SnowModel2 00000000 *Var0  00000000 )
+            Wait  1`
+            If  *Var1  ==  00000000
+                BreakLoop
+            EndIf
+        EndLoop
+    EndThread
+    Thread
+        Call MakeLerp ( 0` 50` 120` .Easing:Linear )
+        Loop
+            Call  UpdateLerp ( )
+            Call  TranslateGroup ( ~Model:Snowman 00000000 *Var0  00000000 )
+            Wait  1`
+            If  *Var1  ==  00000000
+                BreakLoop
+            EndIf
+        EndLoop
+    EndThread
+    Call GetModelCenter ( ~Model:SnowModel2 )
+    Add *Var1 5`
+    Call  PlayEffect    ( ~FX:BigSmokePuff *Var0 *Var1 *Var2 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 )
+    Call PlaySoundAtModel ( ~Model:SnowModel2 .Sound:MoleDig 00000000 )
+    Wait 30`
+    Call  PlayEffect    ( ~FX:BigSmokePuff *Var0 *Var1 *Var2 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 )
+    Call PlaySoundAtModel ( ~Model:SnowModel2 .Sound:MoleDig 00000000 )
+    Wait 30`
+    Call  PlayEffect    ( ~FX:BigSmokePuff *Var0 *Var1 *Var2 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 )
+    Call PlaySoundAtModel ( ~Model:SnowModel2 .Sound:MoleDig 00000000 )
+    Wait 30`
+    Call  PlayEffect    ( ~FX:BigSmokePuff *Var0 *Var1 *Var2 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 )
+    Call PlaySoundAtModel ( ~Model:SnowModel2 .Sound:MoleDig 00000000 )
+    Wait 30`
+    Call  ModifyColliderFlags   ( 00000000 ~Collider:SnowCollider2 7FFFFE00 )
+    Unbind
+    Call DisablePlayerInput ( .False )
+    Return
+    End
+}
+
+#new:Script $Script_RemoveSnow
+{
+    Call DisablePlayerInput ( .True )
+    Thread
+        Call MakeLerp ( 0` -50` 60` .Easing:Linear )
+        Loop
+            Call  UpdateLerp ( )
+            Call  TranslateModel ( ~Model:SnowModel3 00000000 *Var0  00000000 )
+            Wait  1`
+            If  *Var1  ==  00000000
+                BreakLoop
+            EndIf
+        EndLoop
+    EndThread
+    Call GetModelCenter ( ~Model:SnowModel3 )
+    Add *Var1 5`
+    Call  PlayEffect    ( ~FX:BigSmokePuff *Var0 *Var1 *Var2 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 )
+    Call PlaySoundAtModel ( ~Model:SnowModel3 .Sound:MoleDig 00000000 )
+    Wait 30`
+    Call  PlayEffect    ( ~FX:BigSmokePuff *Var0 *Var1 *Var2 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 )
+    Call PlaySoundAtModel ( ~Model:SnowModel3 .Sound:MoleDig 00000000 )
+    Wait 30`
+    Call  ModifyColliderFlags   ( 00000000 ~Collider:SnowCollider3 7FFFFE00 )
+    Unbind
+    Call DisablePlayerInput ( .False )
+    Return
+    End
+}

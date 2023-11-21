@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <MapTable>
 	<Area name="kmr" nickname="Goomba Region">
 		<Map name="kmr_00" nickname="Forest Clearing" flags="1"/>
@@ -567,6 +567,7 @@
 		<Map name="tst_12" nickname="Flower Fields Test"/>
 		<Map name="tst_13" nickname="Partners and Shockwave"/>
 		<Map name="tst_20" nickname="Pipes Gallery"/>
+		<Map name="tst_sno" nickname="Snow Test"/>
 	</Area>
 	<Resource name="mac_tex" compressed="false"/>
 	<Resource name="tik_tex" compressed="false"/>
