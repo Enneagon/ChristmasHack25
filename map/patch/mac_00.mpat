@@ -1,0 +1,43 @@
+@ $Script_80253508 {
+    Call  DisablePlayerInput    ( .True )
+    Call  UseSettingsFrom   ( .Cam:Default  -100`  30`  -370` )
+    Call  SetPanTarget      ( .Cam:Default  -100`  30`  -370` )
+    Call  SetCamDistance    ( .Cam:Default *Fixed[300.0] )
+    Call  SetCamSpeed       ( .Cam:Default *Fixed[90.0] )
+    Call  PanToTarget       ( .Cam:Default 00000000 00000001 )
+    Thread
+        ExecWait  $Script_80253220
+        Wait  10`
+        Call  802D1270  ( FFFFFFC4 FFFFFEC0 *Fixed[4.0] )
+        Wait  63`
+        Call  802D1270  ( -200` -317` *Fixed[4.0] )
+        Call  802D1270  ( -430` -510` *Fixed[4.0] )
+    EndThread
+    Thread
+        Wait  70`
+        ExecWait  $Script_80253374
+        Wait  40`
+        Call  SetNpcFlagBits    ( 00000000 00000200 .True )
+        Call  SetNpcAnimation   ( 00000000 0082000A )
+        Call  SetNpcSpeed   ( 00000000 *Fixed[4.0] )
+        Call  NpcMoveTo     ( 00000000  -200` -317`  0` )
+        Call  NpcMoveTo     ( 00000000  -400` -460`  0` )
+    EndThread
+    Wait  70`
+    Call  SetPanTarget  ( .Cam:Default  -60`  0`  -320` )
+    Call  SetCamDistance    ( .Cam:Default *Fixed[600.0] )
+    Call  SetCamSpeed   ( .Cam:Default *Fixed[2.0] )
+    Call  PanToTarget   ( .Cam:Default 00000000 00000001 )
+    Call  WaitForCam    ( .Cam:Default *Fixed[1.0] )
+    Call  UseSettingsFrom   ( .Cam:Default  -400`  0`  -400` )
+    Call  SetPanTarget  ( .Cam:Default  -250`  0`  -300` )
+    Call  SetCamDistance    ( .Cam:Default *Fixed[250.0] )
+    Call  SetCamSpeed   ( .Cam:Default *Fixed[0.75] )
+    Call  PanToTarget   ( .Cam:Default 00000000 00000001 )
+    Call  WaitForCam    ( .Cam:Default *Fixed[1.0] )
+    Call  GotoMap       ( "kmr_10" ~Entry:kmr_10:Entry1 )
+    Wait  100`
+    Call  DisablePlayerInput    ( .False )
+    Return
+    End
+}
