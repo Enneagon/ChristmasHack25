@@ -166,44 +166,87 @@
 
 #message:2F:010
 {
-	[CenterX 159][Wave]Gwa ha ha ha ha ha ha ha!![BR]
-	[/fx][End]
+	[Style Right]
+	[Shake][Size 46]Noooooooooo![/fx][BR][BR][Size 16][BR]
+	[Wait][Next]
+	[Up 34]What are you doing? We can't[BR]
+	have a merry Christmas if you[BR]
+	knock down our Christmas tree![Wait][End]
 }
 
 #message:2F:011
 {
-	[CenterX 159]So I can, at long last, beat my[BR]
-	archenemy, Mario,[End]
+	[Style Right]
+	Heya, Mario![Pause 5] You can't leave[BR]
+	yet![Pause 5] You'll miss your presents![Wait][End]
 }
 
 #message:2F:012
 {
-	[CenterX 159]I'll take this Star Rod![End]
+	[Style Right]
+	I'm here! I'm here![Wait][End]
 }
 
 #message:2F:013
 {
-	[CenterX 159]Do it, Kammy Koopa!![End]
+	[Style Right]
+	Phew! Sorry for the holdup,[BR]
+	everyone![BR]
+	[Wait][Next]
+	I flew to get a limited-edition[BR]
+	triple-chocolate sugarplum coffee[BR]
+	with extra candy cane sprinkles[BR]
+	and lost track of the time![Wait][End]
 }
 
 #message:2F:014
 {
-	[CenterX 159][End]
+	[Style Right]
+	Well, you're here now, and that's[BR]
+	all that matters.[BR]
+	[Wait][Next]
+	I hope that drink gave you the[BR]
+	energy you need to start handing[BR]
+	out presents![Wait][End]
 }
 
 #message:2F:015
 {
-	[CenterX 159]No, you mustn't do that!![End]
+	[Style Right]
+	...Presents?[Pause 15] What do you mean?[BR]
+	[Wait][Next]
+	I was worried I might run late,[BR]
+	so I arrived an hour early and[BR]
+	put all the presents under the...
+	[Wait][End]
 }
 
 #message:2F:016
 {
-	[CenterX 159]Yeah! Now let's try using it![End]
+	[Style Right]
+	[Wave][Down 12]  The presents were stolen!!![/fx]
+	[Wait][End]
 }
 
 #message:2F:017
 {
-	[CenterX 159]Stop it! Cut it out, Bowser!![End]
+	[Style Right]
+	Mario?[Pause 10] I'm only going to say[BR]
+	this once.[BR]
+	[Wait][Next]
+	I need you to take Parakarry[BR]
+	and track down whoever stole[BR]
+	our presents, okay?[Pause 10] Do whatever[BR]
+	it takes.[BR]
+	[Wait][Next]
+	And Mario...[Pause 15] If the seashell[BR]
+	hairbrush that the Isle Delfino[BR]
+	minister promised me isn't in my[BR]
+	hand by the day's end...[BR]
+	[Wait][Next]
+	Bad things will happen.[Pause 10] Do I[BR]
+	make myself clear?
+	[Wait][End]
 }
 
 #message:2F:018

@@ -5,9 +5,18 @@
     ORI v0, r0, 2
 }
 
+#new:Function $Function_GetHammer
+{
+    LI        V0, 0
+    SAB       V0, 8010F291
+    JR        RA
+    LI        V0, 2
+}
+
 @ $Script_8024FD70 {
     Call  DisablePlayerInput    ( .True )
     Call $Function_StartGame
+    Call  $Function_GetHammer (  )
     Thread
         Wait  5`
         Call  SetMusicTrack ( 00000000 .Song:MailCall 00000000 00000008 )

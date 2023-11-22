@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map name="sno_00" author="unnamed" background="yki_bg" textures="kmr_tex">
 	<Editor>
-		<Camera pos="114.073326,49.717121,-10.391299" pitch="23.519945" yaw="353.918793"/>
-		<Camera pos="-29.165173,65536.000000,331.941559"/>
-		<Camera pos="65536.000000,-36.606331,74.528656"/>
-		<Camera pos="264.310577,-0.476490,65536.000000"/>
+		<Camera pos="270.013916,58.248558,159.058167" pitch="13.039996" yaw="354.559875"/>
+		<Camera pos="0.222309,65536.000000,13.563022"/>
+		<Camera pos="65536.000000,177.923386,-48.898495"/>
+		<Camera pos="108.962051,132.554153,65536.000000"/>
 	</Editor>
 	<ModelTree>
 		<Node name="Root" id="1C">
@@ -23,8 +23,8 @@
 			<Node name="miki3" id="A"/>
 			<Node name="ki6" id="B"/>
 			<Node name="miki6" id="C"/>
-			<Node name="ki6" id="D"/>
-			<Node name="miki6" id="E"/>
+			<Node name="ki7" id="D"/>
+			<Node name="miki7" id="E"/>
 			<Node name="Radial GridModel" id="F"/>
 			<Node name="ProjectionModel" id="10"/>
 			<Node name="ConeModel" id="11"/>
@@ -41,7 +41,7 @@
 		</Node>
 	</ModelTree>
 	<ColliderTree>
-		<Node name="Root" id="F">
+		<Node name="Root" id="10">
 			<Node name="Stage" id="2">
 				<Node name="main_walls" id="0"/>
 				<Node name="MeshCollider" id="1"/>
@@ -57,34 +57,38 @@
 			</Node>
 			<Node name="MeshCollider" id="A"/>
 			<Node name="HullCollider" id="B"/>
-			<Node name="HullCollider" id="C"/>
-			<Node name="HullCollider" id="D"/>
-			<Node name="HullCollider" id="E"/>
+			<Node name="SmallTreeCollider1" id="C"/>
+			<Node name="SmallTreeCollider2" id="D"/>
+			<Node name="BigTreeCollider" id="E"/>
+			<Node name="Planar GridCollider" id="F"/>
 		</Node>
 	</ColliderTree>
 	<ZoneTree>
-		<Node name="Root" id="3">
+		<Node name="Root" id="4">
 			<Node name="main_cam" id="0"/>
 			<Node name="exit_n_cam" id="1"/>
 			<Node name="exit_s_cam" id="2"/>
+			<Node name="CutsceneCam" id="3"/>
 		</Node>
 	</ZoneTree>
 	<MarkerTree>
-		<Node name="Root" id="C">
+		<Node name="Root" id="D">
 			<Node name="Entrances" id="0">
 				<Node name="entry_s" id="FFFFFFFF"/>
 			</Node>
-			<Node name="NPCs" id="1"/>
-			<Node name="Luigi" id="2"/>
-			<Node name="Princess" id="3"/>
-			<Node name="ThreeSisters_1" id="4"/>
-			<Node name="ThreeSisters_2" id="5"/>
-			<Node name="ThreeSisters_3" id="6"/>
-			<Node name="Boo" id="7"/>
-			<Node name="Bumpty" id="8"/>
-			<Node name="ToadGuard" id="9"/>
-			<Node name="Parakarry" id="A"/>
-			<Node name="Harry" id="B"/>
+			<Node name="NPCs" id="B">
+				<Node name="Luigi" id="1"/>
+				<Node name="Princess" id="2"/>
+				<Node name="ThreeSisters_1" id="3"/>
+				<Node name="ThreeSisters_2" id="4"/>
+				<Node name="ThreeSisters_3" id="5"/>
+				<Node name="Boo" id="6"/>
+				<Node name="Bumpty" id="7"/>
+				<Node name="ToadGuard" id="8"/>
+				<Node name="Parakarry" id="9"/>
+				<Node name="Harry" id="A"/>
+			</Node>
+			<Node name="TreeBomb" id="C"/>
 		</Node>
 	</MarkerTree>
 	<LightSets>
@@ -107,24 +111,24 @@
 					<F3DEX2 cmd="D9FFFFFF,200400"/>
 					<TriangleBatch ver="0">
 						<VertexTable>
-							<Vertex xyz="258,-5,82"/>
-							<Vertex xyz="258,-5,92" uv="1024,0"/>
-							<Vertex xyz="258,5,82" uv="0,1024"/>
-							<Vertex xyz="258,5,92" uv="1024,1024"/>
-							<Vertex xyz="268,-5,92" uv="2048,0"/>
-							<Vertex xyz="268,5,92" uv="2048,1024"/>
-							<Vertex xyz="268,-5,82" uv="3072,0"/>
-							<Vertex xyz="268,5,82" uv="3072,1024"/>
-							<Vertex xyz="258,-5,82" uv="4096,0"/>
-							<Vertex xyz="258,5,82" uv="4096,1024"/>
-							<Vertex xyz="258,5,82" uv="0,-2048"/>
-							<Vertex xyz="258,5,92" uv="0,-1024"/>
-							<Vertex xyz="268,5,82" uv="1024,-2048"/>
-							<Vertex xyz="268,5,92" uv="1024,-1024"/>
-							<Vertex xyz="258,-5,82" uv="2048,-2048"/>
-							<Vertex xyz="268,-5,82" uv="3072,-2048"/>
-							<Vertex xyz="258,-5,92" uv="2048,-1024"/>
-							<Vertex xyz="268,-5,92" uv="3072,-1024"/>
+							<Vertex xyz="258,0,82"/>
+							<Vertex xyz="258,0,92" uv="1024,0"/>
+							<Vertex xyz="258,10,82" uv="0,1024"/>
+							<Vertex xyz="258,10,92" uv="1024,1024"/>
+							<Vertex xyz="268,0,92" uv="2048,0"/>
+							<Vertex xyz="268,10,92" uv="2048,1024"/>
+							<Vertex xyz="268,0,82" uv="3072,0"/>
+							<Vertex xyz="268,10,82" uv="3072,1024"/>
+							<Vertex xyz="258,0,82" uv="4096,0"/>
+							<Vertex xyz="258,10,82" uv="4096,1024"/>
+							<Vertex xyz="258,10,82" uv="0,-2048"/>
+							<Vertex xyz="258,10,92" uv="0,-1024"/>
+							<Vertex xyz="268,10,82" uv="1024,-2048"/>
+							<Vertex xyz="268,10,92" uv="1024,-1024"/>
+							<Vertex xyz="258,0,82" uv="2048,-2048"/>
+							<Vertex xyz="268,0,82" uv="3072,-2048"/>
+							<Vertex xyz="258,0,92" uv="2048,-1024"/>
+							<Vertex xyz="268,0,92" uv="3072,-1024"/>
 						</VertexTable>
 						<TriangleList>
 							<Triangle ijk="0,1,2"/>
@@ -145,7 +149,7 @@
 			</ShapeMesh>
 			<PropertyList>
 				<Property v="5C,0,1"/>
-				<Property v="5F,0,20"/>
+				<Property v="5F,0,40"/>
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
@@ -993,7 +997,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="miki6" id="E"/>
+			<MapObject name="miki7" id="E"/>
 			<ShapeMesh ver="3" texture="kmr_wood_ctif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -1141,7 +1145,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="ki6" id="D"/>
+			<MapObject name="ki7" id="D"/>
 			<ShapeMesh ver="3" texture="sam_ki3tif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -2057,11 +2061,29 @@
 	</Models>
 	<Colliders>
 		<Collider ver="0" flags="0">
-			<MapObject name="Root" id="F"/>
+			<MapObject name="Root" id="10"/>
 			<HitObject type="ROOT"/>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="HullCollider" id="E"/>
+			<MapObject name="Planar GridCollider" id="F" hidden="true"/>
+			<HitObject type="HIT"/>
+			<HitMesh ver="0">
+				<TriangleBatch ver="0">
+					<VertexTable>
+						<Vertex xyz="-100,200,100" uv="-512,512"/>
+						<Vertex xyz="100,200,-100" uv="512,-512"/>
+						<Vertex xyz="-100,200,-100" uv="-512,-512"/>
+						<Vertex xyz="100,200,100" uv="512,512"/>
+					</VertexTable>
+					<TriangleList>
+						<Triangle ijk="0,1,2"/>
+						<Triangle ijk="1,0,3"/>
+					</TriangleList>
+				</TriangleBatch>
+			</HitMesh>
+		</Collider>
+		<Collider ver="0" flags="0">
+			<MapObject name="BigTreeCollider" id="E" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -2095,7 +2117,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="HullCollider" id="D"/>
+			<MapObject name="SmallTreeCollider2" id="D" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -2129,7 +2151,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="HullCollider" id="C"/>
+			<MapObject name="SmallTreeCollider1" id="C" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -2163,7 +2185,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="HullCollider" id="B"/>
+			<MapObject name="HullCollider" id="B" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -2249,7 +2271,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="MeshCollider" id="A"/>
+			<MapObject name="MeshCollider" id="A" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -2329,7 +2351,7 @@
 			<HitObject type="GROUP"/>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="npc_barrier_w" id="8"/>
+			<MapObject name="npc_barrier_w" id="8" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -2347,7 +2369,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="18000">
-			<MapObject name="npc_barrier_s" id="7"/>
+			<MapObject name="npc_barrier_s" id="7" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -2365,7 +2387,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="npc_barrier_e" id="6"/>
+			<MapObject name="npc_barrier_e" id="6" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -2383,7 +2405,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="npc_barrier_n" id="5"/>
+			<MapObject name="npc_barrier_n" id="5" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -2405,7 +2427,7 @@
 			<HitObject type="GROUP"/>
 		</Collider>
 		<Collider ver="0" flags="8">
-			<MapObject name="exit_trigger_s" id="3"/>
+			<MapObject name="exit_trigger_s" id="3" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -2427,7 +2449,7 @@
 			<HitObject type="GROUP"/>
 		</Collider>
 		<Collider ver="0" flags="8">
-			<MapObject name="MeshCollider" id="1"/>
+			<MapObject name="MeshCollider" id="1" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -2503,7 +2525,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="main_walls" id="0"/>
+			<MapObject name="main_walls" id="0" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -2629,8 +2651,29 @@
 	</Colliders>
 	<Zones>
 		<Zone ver="0">
-			<MapObject name="Root" id="3"/>
+			<MapObject name="Root" id="4"/>
 			<HitObject type="ROOT"/>
+		</Zone>
+		<Zone ver="0">
+			<MapObject name="CutsceneCam" id="3" hidden="true"/>
+			<HitObject type="HIT"/>
+			<HitMesh ver="0">
+				<TriangleBatch ver="0">
+					<VertexTable>
+						<Vertex xyz="-100,200,100" uv="-512,512"/>
+						<Vertex xyz="100,200,-100" uv="512,-512"/>
+						<Vertex xyz="-100,200,-100" uv="-512,-512"/>
+						<Vertex xyz="100,200,-100" uv="512,-512"/>
+						<Vertex xyz="-100,200,100" uv="-512,512"/>
+						<Vertex xyz="100,200,100" uv="512,512"/>
+					</VertexTable>
+					<TriangleList>
+						<Triangle ijk="0,1,2"/>
+						<Triangle ijk="3,4,5"/>
+					</TriangleList>
+				</TriangleBatch>
+			</HitMesh>
+			<Camera type="TYPE_4" flag="false" boomLength="400.000000" boomPitch="12.000000" viewPitch="-6.000000" posA="0,0,50" posB="0,-10,-50" posC="10,0,10"/>
 		</Zone>
 		<Zone ver="0">
 			<MapObject name="exit_s_cam" id="2" hidden="true"/>
@@ -2708,60 +2751,64 @@
 	</Zones>
 	<Markers>
 		<Marker ver="4" type="Root">
-			<MapObject name="Root" id="C"/>
+			<MapObject name="Root" id="D"/>
+		</Marker>
+		<Marker ver="4" type="Trigger" pos="-41,0,0" yaw="0.000000">
+			<MapObject name="TreeBomb" id="C"/>
+			<BombTrigger radius="0.000000"/>
+		</Marker>
+		<Marker ver="4" type="Group">
+			<MapObject name="NPCs" id="B"/>
 		</Marker>
 		<Marker ver="4" type="NPC" pos="-97,4,242" yaw="0.000000">
-			<MapObject name="Harry" id="B"/>
+			<MapObject name="Harry" id="A"/>
 			<Movement type="Stationary" data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
 			<Sprite sprite="88" palette="0" animations="1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
 		</Marker>
 		<Marker ver="4" type="NPC" pos="0,-50,0" yaw="0.000000">
-			<MapObject name="Parakarry" id="A"/>
+			<MapObject name="Parakarry" id="9"/>
 			<Movement type="Stationary" data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
-			<Sprite sprite="4" palette="0" animations="1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
+			<Sprite sprite="4" palette="0" animations="1,2,3,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
 		</Marker>
 		<Marker ver="4" type="NPC" pos="111,0,-79" yaw="0.000000">
-			<MapObject name="ToadGuard" id="9"/>
+			<MapObject name="ToadGuard" id="8"/>
 			<Movement type="Stationary" data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
 			<Sprite sprite="87" palette="2" animations="1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
 		</Marker>
 		<Marker ver="4" type="NPC" pos="-156,0,116" yaw="0.000000">
-			<MapObject name="Bumpty" id="8"/>
+			<MapObject name="Bumpty" id="7"/>
 			<Movement type="Stationary" data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
 			<Sprite sprite="9A" palette="0" animations="1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
 		</Marker>
 		<Marker ver="4" type="NPC" pos="-123,0,-124" yaw="0.000000">
-			<MapObject name="Boo" id="7"/>
+			<MapObject name="Boo" id="6"/>
 			<Movement type="Stationary" data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
 			<Sprite sprite="95" palette="0" animations="1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
 		</Marker>
 		<Marker ver="4" type="NPC" pos="186,0,224" yaw="270.000000">
-			<MapObject name="ThreeSisters_3" id="6"/>
+			<MapObject name="ThreeSisters_3" id="5"/>
 			<Movement type="Stationary" data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
 			<Sprite sprite="84" palette="3" animations="1,2,3,3,1,1,6,6,3,3,3,3,3,3,3,3"/>
 		</Marker>
 		<Marker ver="4" type="NPC" pos="91,0,224" yaw="180.000000">
-			<MapObject name="ThreeSisters_2" id="5"/>
+			<MapObject name="ThreeSisters_2" id="4"/>
 			<Movement type="Stationary" data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
 			<Sprite sprite="84" palette="0" animations="1,2,3,3,1,1,6,6,3,3,3,3,3,3,3,3"/>
 		</Marker>
 		<Marker ver="4" type="NPC" pos="136,0,166" yaw="90.000000">
-			<MapObject name="ThreeSisters_1" id="4"/>
+			<MapObject name="ThreeSisters_1" id="3"/>
 			<Movement type="Stationary" data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
 			<Sprite sprite="84" palette="2" animations="1,2,3,3,1,1,6,6,3,3,3,3,3,3,3,3"/>
 		</Marker>
 		<Marker ver="4" type="NPC" pos="35,0,33" yaw="0.000000">
-			<MapObject name="Princess" id="3"/>
+			<MapObject name="Princess" id="2"/>
 			<Movement type="Stationary" data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
-			<Sprite sprite="D6" palette="0" animations="D,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
+			<Sprite sprite="D6" palette="0" animations="4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
 		</Marker>
 		<Marker ver="4" type="NPC" pos="-16,0,354" yaw="0.000000">
-			<MapObject name="Luigi" id="2"/>
+			<MapObject name="Luigi" id="1"/>
 			<Movement type="Stationary" data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
 			<Sprite sprite="82" palette="0" animations="4,8,8,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
-		</Marker>
-		<Marker ver="4" type="Group">
-			<MapObject name="NPCs" id="1"/>
 		</Marker>
 		<Marker ver="4" type="Group">
 			<MapObject name="Entrances" id="0"/>
@@ -2791,6 +2838,18 @@
 		</TexPanners>
 		<Generators>
 			<Entrance name="Entry" type="Walk" hasCallback="false" entry="entry_s"/>
+			<Tree name="BigTree" hasCallback="true" collider="BigTreeCollider" bombPos="TreeBomb">
+				<TrunkModel name="miki3"/>
+				<LeafModel name="ki3"/>
+			</Tree>
+			<Tree name="SmallTree2" hasCallback="false" collider="SmallTreeCollider2" bombPos="TreeBomb">
+				<TrunkModel name="miki7"/>
+				<LeafModel name="ki7"/>
+			</Tree>
+			<Tree name="SmallTree1" hasCallback="false" collider="SmallTreeCollider1" bombPos="TreeBomb">
+				<TrunkModel name="miki6"/>
+				<LeafModel name="ki6"/>
+			</Tree>
 		</Generators>
 		<Camera vfov="25" near="16" far="4096" bgcolor="0,0,0" leadsPlayer="false"/>
 		<Fog world="0,10,10,10,255,950,1000" entity="0,10,10,10,255,950,1000"/>

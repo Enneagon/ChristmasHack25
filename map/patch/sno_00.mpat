@@ -15,6 +15,7 @@
     Call  SetCamEnabled      ( .Cam:Default .True )
     Call  SetCamLeadPlayer   ( .Cam:Default .False )
     Exec  $Script_SetupMusic
+	Exec  $Script_BindFoliage
     Call  MakeNpcs  ( .False $NpcGroupList_Always )
     Exec  $Script_EnterMap
     Return
@@ -220,9 +221,9 @@
 {
   Call  DisablePlayerInput ( .True )
   Call  SpeakToPlayer ( .NpcID:ThreeSisters_1 00840204 00840201 00000000 002F000A ) % String
-  Wait 30`
+  Wait 20`
   Call  SpeakToPlayer ( .NpcID:ThreeSisters_2 00840004 00840001 00000000 002F000B ) % String
-  Wait 30`
+  Wait 20`
   Call  SpeakToPlayer ( .NpcID:ThreeSisters_3 00840304 00840301 00000000 002F000C ) % String
   Call  DisablePlayerInput ( .False )
   Return
@@ -237,11 +238,81 @@
     If *Var0 == 00000000
         Call CloseMessage ()
         Call  SpeakToPlayer ( .Npc:Self 00D60002 00D60004 00000000 002F000E ) % String
+        Wait 30`
+        Call  ShowMessageAtScreenPos    ( 002F0012  160`  40` ) % String
+        Call SetNpcPos ( .NpcID:Parakarry -100` 200` 33` )
+        Call  SetNpcAnimation   ( .NpcID:Parakarry 00040002 )
+        Call UseSettingsFrom ( .Cam:Default 0` 200` 0` )
+        Call  PanToTarget       ( .Cam:Default 00000000 00000001 )
+        Call  PlayerFaceNpc ( .NpcID:Parakarry .False )
+        Call InterpNpcYaw ( .NpcID:Princess 270` 10` )
+        Call NpcFlyTo ( .NpcID:Parakarry -40` 0` 33` 120` 1` .Easing:CosInOut )
+        Call  SetNpcAnimation   ( .NpcID:Parakarry 00040001 )
+        Call  SpeakToPlayer ( .NpcID:Parakarry 00040006 00040001 00000000 002F0013 ) % String
+        Call SpeakToNpc ( .NpcID:Princess 00D60002 00D60004 00000000 .NpcID:Parakarry 002F0014 )
+        Call FadeOutMusic ( 00000000 2000` )
+        Call  SpeakToPlayer ( .NpcID:Parakarry 00040006 00040001 00000000 002F0015 ) % String
+        Wait 30`
+        Call InterpNpcYaw ( .NpcID:Parakarry 270` 10` )
+        Wait 30`
+        Call InterpNpcYaw ( .NpcID:Parakarry 90` 10` )
+        Wait 60`
+        Call  SetMusicTrack     ( 00000000 .Song:PenguinWhodunit 00000000 00000008 )
+    	Call  SetNpcAnimation   ( .NpcID:Parakarry 00040005 )
+        Call  SetNpcAnimation   ( .NpcID:Princess 00D60007 )
+        Call  SetPlayerAnimation ( .PlayerAnim:Scared )
+        Thread
+        Loop  00000005
+            Call  GetNpcPos     ( .NpcID:Parakarry *Var0 *Var1 *Var2 )
+            Add *Var1 20`
+            Call  UseSettingsFrom   ( .Cam:Default 0` 200` 0` )
+            Call  SetPanTarget  ( .Cam:Default *Var0 *Var1 *Var2 )
+            Call  SetCamDistance    ( .Cam:Default *Fixed[210.0] )
+            Call  SetCamSpeed   ( .Cam:Default *Fixed[10.0] )
+            Call  PanToTarget   ( .Cam:Default 00000000 00000001 )
+            Call  WaitForCam    ( .Cam:Default *Fixed[1.0] )
+            Call  GetNpcPos     ( .NpcID:Parakarry *Var0 *Var1 *Var2 )
+            Add *Var1 20`
+            Call  UseSettingsFrom   ( .Cam:Default 0` 200` 0` )
+            Call  SetPanTarget  ( .Cam:Default *Var0 *Var1 *Var2 )
+            Call  SetCamDistance    ( .Cam:Default *Fixed[400.0] )
+            Call  SetCamSpeed   ( .Cam:Default *Fixed[10.0] )
+            Call  PanToTarget   ( .Cam:Default 00000000 00000001 )
+            Call  WaitForCam    ( .Cam:Default *Fixed[1.0] )
+        EndLoop
+            Call UseSettingsFrom ( .Cam:Default 0` 200` 0` )
+            Call  PanToTarget       ( .Cam:Default 00000000 00000001 )
+        EndThread
+        Call  SpeakToPlayer ( .NpcID:Parakarry 00040005 00040005 00000000 002F0016 ) % String
+        Wait 60`
+        Call  SetPlayerAnimation ( .PlayerAnim:StandStill )
+        Call  SpeakToPlayer ( .Npc:Self 00D60007 00D60007 00000000 002F0017 ) % String
+        Call  GetPlayerPos ( *Var0 *Var1 *Var2 )
+        Wait 10`
+        Call  SetPlayerAnimation ( .PlayerAnim:NodYes )
+        Wait 30`
+        Call  PlayerFaceNpc ( .NpcID:Parakarry .False )
+        Wait 20`
+        Call  SetPlayerJumpscale    ( *Fixed[1.0] )
+        Call  PlayerJump ( *Var0 *Var1 *Var2 15` )
+        Call  SetNpcAnimation   ( .NpcID:Parakarry 00040001 )
+        Call  GetNpcPos     ( .NpcID:Parakarry *Var0 *Var1 *Var2 )
+        Call  NpcJump1 ( .NpcID:Parakarry *Var0 *Var1 *Var2 10` )
+        Wait 20`
+        Thread
+            Call PlayerMoveTo ( 14` 300` 120` )
+        EndThread
+        Thread
+            Call  SetNpcAnimation   ( .NpcID:Parakarry 00040002 )
+            Call NpcMoveTo ( .NpcID:Parakarry -14` 300` 120` )
+        EndThread
+        Wait 90`
+        Call GotoMapSpecial ( "sno_00" ~Entry:sno_00:entry_s 00000007 )
     Else
         Call CloseMessage ()
         Call  SpeakToPlayer ( .Npc:Self 00D60002 00D60004 00000000 002F000F ) % String
+        Call  DisablePlayerInput ( .False )
   EndIf
-  Call  DisablePlayerInput ( .False )
   Return
   End
 }
@@ -261,10 +332,33 @@
             Call  SetNpcAnimation   ( .NpcID:Luigi 0082000A )
             Call  NpcMoveTo     ( .NpcID:Luigi  -60` 230`  0` )
             Call  SetNpcAnimation   ( .NpcID:Luigi 00820004 )
+            Bind $Script_NoLeaving .Trigger:FloorTouch ~Collider:exit_trigger_s 00000001 00000000
             Call  DisablePlayerInput ( .False )
         Default
             Exec  $Script_CreateExitTriggers
     EndSwitch
     Return
     End
+}
+
+@ $Script_Callback_BigTree {
+    Call  DisablePlayerInput ( .True )
+    Call  SetNpcAnimation   ( .NpcID:Princess 00D60006 )
+    Call  NpcJump1 ( .NpcID:Princess 35` 0` 33` 10` )
+    Call  SpeakToPlayer ( .NpcID:Princess 00D60006 00D60006 00000000 002F0010 ) % String
+    Wait 10`
+    Call  SetNpcAnimation   ( .NpcID:Princess 00D60004 )
+    Call  DisablePlayerInput ( .False )
+    Return
+    End
+}
+
+#new:Script $Script_NoLeaving
+{
+    Call  DisablePlayerInput ( .True )
+    Call  SpeakToPlayer ( .NpcID:Luigi 00820014 00820004 00000000 002F0011 )
+    Call  PlayerMoveTo ( 0` 300` 10` )
+  Call  DisablePlayerInput ( .False )
+  Return
+  End
 }
