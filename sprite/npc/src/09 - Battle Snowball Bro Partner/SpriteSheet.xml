@@ -85,13 +85,13 @@
 		<Animation name="Anim_03">
 			<Component name="Comp_00" xyz="0,0,0">
 				<Command val="101C"/>
+				<Command val="8"/>
+				<Command val="101D"/>
+				<Command val="6"/>
+				<Command val="101E"/>
 				<Command val="4"/>
 				<Command val="101D"/>
-				<Command val="2"/>
-				<Command val="101E"/>
-				<Command val="2"/>
-				<Command val="101D"/>
-				<Command val="2"/>
+				<Command val="6"/>
 				<Command val="2000"/>
 			</Component>
 		</Animation>
@@ -115,7 +115,7 @@
 		</Animation>
 		<Animation name="Anim_06">
 			<Component name="Comp_00" xyz="0,-14,0">
-				<Command val="1021"/>
+				<Command val="1029"/>
 				<Command val="2"/>
 				<Command val="2000"/>
 			</Component>
@@ -227,14 +227,14 @@
 		</Animation>
 		<Animation name="Anim_12">
 			<Component name="Comp_00" xyz="0,0,0">
-				<Command val="1002"/>
+				<Command val="101C"/>
+				<Command val="8"/>
+				<Command val="101D"/>
+				<Command val="6"/>
+				<Command val="101E"/>
 				<Command val="4"/>
-				<Command val="1003"/>
-				<Command val="2"/>
-				<Command val="1004"/>
-				<Command val="2"/>
-				<Command val="1003"/>
-				<Command val="2"/>
+				<Command val="101D"/>
+				<Command val="6"/>
 				<Command val="2000"/>
 			</Component>
 		</Animation>
@@ -275,25 +275,43 @@
 		</Animation>
 		<Animation name="Anim_16">
 			<Component name="Comp_00" xyz="0,0,0">
-				<Command val="101B"/>
-				<Command val="6"/>
-				<Command val="1027"/>
-				<Command val="6"/>
-				<Command val="2000"/>
-			</Component>
-		</Animation>
-		<Animation name="Anim_17">
-			<Component name="Comp_00" xyz="0,0,0">
 				<Command val="3001"/>
 				<Command val="11"/>
 				<Command val="0"/>
 				<Command val="0"/>
 				<Command val="101F"/>
-				<Command val="4"/>
+				<Command val="8"/>
 				<Command val="3001"/>
 				<Command val="17"/>
 				<Command val="0"/>
 				<Command val="0"/>
+				<Command val="1020"/>
+				<Command val="6"/>
+				<Command val="3001"/>
+				<Command val="16"/>
+				<Command val="0"/>
+				<Command val="0"/>
+				<Command val="1020"/>
+				<Command val="6"/>
+				<Command val="7006"/>
+				<Command val="A"/>
+				<Command val="3001"/>
+				<Command val="17"/>
+				<Command val="0"/>
+				<Command val="0"/>
+				<Command val="1020"/>
+				<Command val="4"/>
+				<Command val="3001"/>
+				<Command val="16"/>
+				<Command val="0"/>
+				<Command val="0"/>
+				<Command val="1020"/>
+				<Command val="4"/>
+				<Command val="2014"/>
+			</Component>
+		</Animation>
+		<Animation name="Anim_17">
+			<Component name="Comp_00" xyz="10,0,0">
 				<Command val="1020"/>
 				<Command val="8"/>
 				<Command val="3001"/>
@@ -306,7 +324,7 @@
 				<Command val="2"/>
 				<Command val="1021"/>
 				<Command val="2"/>
-				<Command val="2014"/>
+				<Command val="200A"/>
 			</Component>
 		</Animation>
 		<Animation name="Anim_18">

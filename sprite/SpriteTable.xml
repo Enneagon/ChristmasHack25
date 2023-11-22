@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <SpriteTable>
 	<NpcSprites>
-		<Sprite id="1" src="01" name="World Goombario"/>
+		<Sprite id="1" src="01 - World Snowball Bro Partner" name="World Goombario"/>
 		<Sprite id="2" src="02" name="World Kooper"/>
 		<Sprite id="3" src="03" name="World Bombette"/>
 		<Sprite id="4" src="04" name="World Parakarry"/>
@@ -9,7 +9,7 @@
 		<Sprite id="6" src="06" name="World Watt"/>
 		<Sprite id="7" src="07" name="World Sushi"/>
 		<Sprite id="8" src="08" name="World Lakilester"/>
-		<Sprite id="9" src="09" name="Battle Goombario"/>
+		<Sprite id="9" src="09 - Battle Snowball Bro Partner" name="Battle Goombario"/>
 		<Sprite id="A" src="0A" name="Battle Kooper"/>
 		<Sprite id="B" src="0B" name="Battle Bombette"/>
 		<Sprite id="C" src="0C" name="Battle Parakarry"/>

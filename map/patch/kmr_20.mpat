@@ -1,5 +1,13 @@
+#new:Function $Function_StartGame {
+    LIO t0, 8010F290
+    SB t1, 000A (t0) %set AC
+    JR RA
+    ORI v0, r0, 2
+}
+
 @ $Script_8024FD70 {
     Call  DisablePlayerInput    ( .True )
+    Call $Function_StartGame
     Thread
         Wait  5`
         Call  SetMusicTrack ( 00000000 .Song:MailCall 00000000 00000008 )

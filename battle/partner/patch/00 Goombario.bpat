@@ -9,3 +9,305 @@
 	[1EC]  LTB	V1, V0 ($Global_ActorOffsetsTable[1])
 	[210]  LTB	A0, V0 ($Global_ActorOffsetsTable[2])
 }
+
+@ $Script_NextTurn_80239A3C {
+	% Call  GetBattlePhase    ( *Var0 )
+	% Switch  *Var0
+	% 	Case  ==  0000000A
+	% 		If  *GF_Tutorial_SwapTurnOrder  ==  .False
+	% 			Call  UseIdleAnimation      ( .Actor:Partner .False )
+	% 			Call  UseBattleCamPreset    ( 0000000E )
+	% 			Call  BattleCamTargetActor  ( .Actor:Self )
+	% 			Call  MoveBattleCamOver     (  20` )
+	% 			Wait  10`
+	% 			Call  SetActorYaw   ( .Actor:Player  30` )
+	% 			Wait  1`
+	% 			Call  SetActorYaw   ( .Actor:Player  60` )
+	% 			Wait  1`
+	% 			Call  SetActorYaw   ( .Actor:Player  90` )
+	% 			Wait  1`
+	% 			Call  SetActorYaw   ( .Actor:Player  120` )
+	% 			Wait  1`
+	% 			Call  SetActorYaw   ( .Actor:Player  150` )
+	% 			Wait  1`
+	% 			Call  SetActorYaw   ( .Actor:Player  180` )
+	% 			Wait  5`
+	% 			Call  ActorSpeak    ( 000B00BA .Actor:Partner 00000000 00090008 00090001 ) % Hey Mario, during a battle, you can change the ord ...
+	% 			Call  SetActorYaw   ( .Actor:Player  150` )
+	% 			Wait  1`
+	% 			Call  SetActorYaw   ( .Actor:Player  120` )
+	% 			Wait  1`
+	% 			Call  SetActorYaw   ( .Actor:Player  90` )
+	% 			Wait  1`
+	% 			Call  SetActorYaw   ( .Actor:Player  60` )
+	% 			Wait  1`
+	% 			Call  SetActorYaw   ( .Actor:Player  30` )
+	% 			Wait  1`
+	% 			Call  SetActorYaw   ( .Actor:Player  0` )
+	% 			Wait  5`
+	% 			Set   *GF_Tutorial_SwapTurnOrder  .True
+	% 			Call  UseIdleAnimation      ( .Actor:Partner .True )
+	% 		EndIf
+	% EndSwitch
+	Return
+	End
+}
+
+@ $Script_802397E0 {
+	Call  GetMenuSelection  ( *Var0 *Var1 *Var2 )
+	Call  802694A4  ( 00000001 )
+	Call  SetBattleFlagBits ( 00004000 .False )
+	Switch  *Var0
+		Case  ==  00000008
+			Call  LoadStarPowerScript ( )
+			ExecWait  *Var0
+			Return
+		Case  ==  00000002
+			Call  LoadItemScript ( )
+			ExecWait  *Var0
+			Return
+	EndSwitch
+	Switch  *Var2
+		Case  ==  00000083
+			ExecWait  $Script_8023A754 %Headbonk Level 1
+		Case  ==  00000084
+			ExecWait  $Script_8023ADC4 %Headbonk Level 2
+		Case  ==  00000085
+			ExecWait  $Script_8023B45C %Headbonk Level 3
+		Case  ==  00000086
+			ExecWait  $Script_8023C5B8 %Tattle
+		Case  ==  00000087
+			ExecWait  $Script_8023C90C %Charge
+		Case  ==  00000088
+			ExecWait  $Script_8023BB9C %Multibonk
+	EndSwitch
+	Return
+	End
+}
+
+@ $Script_8023A754 {
+	Call  LoadActionCommand ( .ActionCommand:Smash )
+    Call  802A9000 ( )
+    Call  InitTargetIterator ( )
+    Call  SetAnimation  ( .Actor:Partner FFFFFFFF 000A0004 )
+    Call  SetAnimation  ( .Actor:Partner FFFFFFFF 000A000E )
+    Wait  15`
+    Call  SetAnimation  ( .Actor:Partner FFFFFFFF 000A000A )
+    Loop  0000001E
+        Wait  1`
+        Call  CheckButtonDown   ( ~Flags:Buttons:40000 *Var0 )
+        If  *Var0  !=  .False
+            BreakLoop
+        EndIf
+    EndLoop
+    Call  802A9258  ( 00000000 0000002F 00000003 )
+    Call  SetActionResult   ( 00000000 )
+    Call  SetAnimation      ( .Actor:Partner FFFFFFFF 00090016 )
+    Call  UseBattleCamPreset    ( 0000003B )
+    Set   *Var9  00000000
+    Set   *Var1  00000000
+    Loop  00000032
+        Wait  1`
+        Call  GetActionResult   ( *Var0 )
+        If  *Var0  !=  00000000
+            If  *Var1  !=  00000001
+                Set   *Var1  00000001
+            EndIf
+        EndIf
+        Call  CheckButtonDown   ( ~Flags:Buttons:40000 *Var0 )
+        If  *Var0  ==  .False
+            BreakLoop
+        EndIf
+    EndLoop
+    Call  UseBattleCamPreset    ( 00000003 )
+    Call  MoveBattleCamOver (  15` )
+    ExecWait  $Script_802392A4
+    Call  SetGoalToTarget   ( .Actor:Partner )
+    Call  PartnerTestEnemy  ( *Var0 ~Flags:DamageType:0 00000014 00000000  2` 00000010 )
+    Call  SetAnimation  ( .Actor:Partner FFFFFFFF 00090017 )
+    If  *Var0  ==  .HitResult:Miss % 6
+        Thread
+            Call  $Function_80238000 ( )
+        EndThread
+        Wait  4`
+        Set   *Var0  00000000
+        Loop  00000002
+            Add   *Var0  FFFFFFE2
+            Call  SetActorRotation  ( .Actor:Partner 00000000 00000000 *Var0 )
+            Wait  1`
+        EndLoop
+        Wait  5`
+        Call  GetActorPos   ( .Actor:Partner *Var4 *Var5 *Var6 )
+        Call  PlayEffect    ( ~FX:SmokeImpact:Small *Var4 *Var5 *Var6 00000010 00000004 00000000 0000000A 00000000 00000000 00000000 00000000 00000000 )
+        Loop  00000005
+            Add   *Var0  0000000C
+            Call  SetActorRotation  ( .Actor:Partner 00000000 00000000 *Var0 )
+            Wait  1`
+        EndLoop
+        Call  SetActorRotationOffset    ( .Actor:Partner 00000000 00000000 00000000 )
+        Call  SetActorRotation  ( .Actor:Partner 00000000 00000000 00000002 )
+        Wait  2`
+        Call  SetActorRotation  ( .Actor:Partner 00000000 00000000 FFFFFFFE )
+        Wait  2`
+        Call  SetActorRotation  ( .Actor:Partner 00000000 00000000 00000000 )
+        Wait  10`
+        Wait  10`
+        Call  SetAnimation      ( .Actor:Partner FFFFFFFF 00090001 )
+        Return
+    EndIf
+    Call  GetActionCommandResult    ( *Var0 )
+    Switch  *Var0
+        Case  >  00000000
+            Call  PartnerDamageEnemy    ( *Var0 ~Flags:DamageType:0 0000009F 00000000 00000002 00000070 )
+        Default
+            Call  PartnerDamageEnemy    ( *Var0 ~Flags:DamageType:0 0000009F 00000000 00000001 00000030 )
+    EndSwitch
+    Wait 15`
+    Call  SetAnimation      ( .Actor:Partner FFFFFFFF 00090001 )
+    Call  PlaySoundAtActor  ( .Actor:Partner 00000000 )
+    Switch  *Var0
+        CaseOR  ==  .HitResult:Hit % 0
+        CaseOR  ==  .HitResult:QuakeImmune % 2
+            %ExecWait  $Script_80239084
+        EndCaseGroup
+        CaseOR  ==  00000001 % 1
+        CaseOR  ==  00000003 % 3
+            %ExecWait  $Script_80238E38
+        EndCaseGroup
+    EndSwitch
+    Return
+    End
+}
+
+
+#new:Script $Script_802392A4
+{
+    0:  Call  SetGoalToTarget   ( .Actor:Partner )
+   10:  Call  GetGoalPos        ( .Actor:Partner *VarB *VarC *VarD )
+   2C:  Call  GetActorPos       ( .Actor:Partner *VarC *VarD *Var0 )
+   48:  If  *VarB  >  *VarC
+   58:  	Sub   *VarB  *VarC
+   68:  Else
+   70:  	Sub   *VarC  *VarB
+   80:  	Set   *VarB  *VarC
+   90:  EndIf
+   98:  DivF  *VarB  *VarA
+   A8:  If  *VarB  <  00000000
+   B8:  	Set   *VarB  00000000
+   C8:  EndIf
+   D0:  Return
+   D8:  End
+}
+
+#new:Script $Script_80239084
+{
+    0:  Call  ResetActorSounds      ( .Actor:Partner .ActorSound:Walk )
+   14:  Call  UseBattleCamPreset    ( 00000033 )
+   24:  Call  80280818 ( )
+   30:  Call  GetActorPos   ( .Actor:Partner *Var0 *Var1 *Var2 )
+   4C:  Sub   *Var0  0000001E
+   5C:  Set   *Var1  00000000
+   6C:  Call  SetActorJumpGravity   ( .Actor:Partner *Fixed[1.1] )
+   80:  Call  SetGoalPos    ( .Actor:Partner *Var0 *Var1 *Var2 )
+   9C:  Call  JumpToGoal    ( .Actor:Partner  10` .False .True .False )
+   BC:  Sub   *Var0  00000014
+   CC:  Call  SetGoalPos    ( .Actor:Partner *Var0 *Var1 *Var2 )
+   E8:  Call  JumpToGoal    ( .Actor:Partner  8` .False .False .True )
+  108:  Sub   *Var0  0000000A
+  118:  Call  SetGoalPos    ( .Actor:Partner *Var0 *Var1 *Var2 )
+  134:  Call  JumpToGoal    ( .Actor:Partner  6` .False .False .True )
+  154:  Sub   *Var0  0000000A
+  164:  Call  JumpToGoal    ( .Actor:Partner  4` .False .False .True )
+  184:  Call  SetAnimation  ( .Actor:Partner FFFFFFFF 000A000F )
+  19C:  Wait  4`
+  1A8:  Call  SetGoalToHome ( .Actor:Partner )
+  1B8:  Call  SetActorSpeed ( .Actor:Partner *Fixed[7.0] )
+  1CC:  Call  SetAnimation  ( .Actor:Partner FFFFFFFF 000A0006 )
+  1E4:  Call  RunToGoal     ( .Actor:Partner  0` )
+  1F8:  Call  SetAnimation  ( .Actor:Partner FFFFFFFF 000A0004 )
+  210:  Return
+  218:  End
+}
+
+#new:Script $Script_80238E38
+{
+    0:  Call  ResetActorSounds  ( .Actor:Partner .ActorSound:Walk )
+   14:  Thread
+   1C:  	Call  UseBattleCamPreset    ( 00000004 )
+   2C:  	Wait  30`
+   38:  	Call  UseBattleCamPreset    ( 00000002 )
+   48:  EndThread
+   50:  Call  80280818 ( )
+   5C:  Call  GetActorPos   ( .Actor:Partner *Var0 *Var1 *Var2 )
+   78:  Sub   *Var0  0000003C
+   88:  Set   *Var1  00000000
+   98:  Call  SetActorJumpGravity   ( .Actor:Partner *Fixed[1.4] )
+   AC:  Call  SetGoalPos    ( .Actor:Partner *Var0 *Var1 *Var2 )
+   C8:  Call  JumpToGoal    ( .Actor:Partner  20` .False .True .False )
+   E8:  Sub   *Var0  0000001E
+   F8:  Call  SetGoalPos    ( .Actor:Partner *Var0 *Var1 *Var2 )
+  114:  Call  JumpToGoal    ( .Actor:Partner  8` .False .False .True )
+  134:  Sub   *Var0  00000014
+  144:  Call  SetGoalPos    ( .Actor:Partner *Var0 *Var1 *Var2 )
+  160:  Call  JumpToGoal    ( .Actor:Partner  6` .False .False .True )
+  180:  Sub   *Var0  0000000A
+  190:  Call  JumpToGoal    ( .Actor:Partner  4` .False .False .True )
+  1B0:  Call  SetAnimation  ( .Actor:Partner FFFFFFFF 000A000F )
+  1C8:  Wait  4`
+  1D4:  Call  SetGoalToHome ( .Actor:Partner )
+  1E4:  Call  SetActorSpeed ( .Actor:Partner *Fixed[7.0] )
+  1F8:  Call  SetAnimation  ( .Actor:Partner FFFFFFFF 000A0006 )
+  210:  Call  RunToGoal     ( .Actor:Partner  0` )
+  224:  Call  SetAnimation  ( .Actor:Partner FFFFFFFF 000A0004 )
+  23C:  Return
+  244:  End
+}
+
+@ $PartsTable_802392A4 {
+	00000000 01000000 081600FF $IdleAnimations_802391B0 $DefenseTable_802391EC 00000000 00000000 00000000 00000000
+	%00000001 02000000 081600FF $IdleAnimations_Snowball $DefenseTable_Snowball 00000000 00000000 00000000 00000000
+}
+
+@ $Goombario {
+	% stats
+	[Index]        6Fb
+	[Level]         0`b
+	[MaxHP]        99`b
+	[Coins]         0`b
+	[Flags]       00000000
+	[StatusTable] $StatusTable_802391F8
+	% ai
+	[PartsCount]    1`s %REMEMBER TO SET TO TWO!!!!
+	[PartsTable]  $PartsTable_802392A4
+	[Script]      $Script_Init_802392F0
+	% move effectiveness
+	[Escape]        0`b
+	[Item]          0`b
+	[AirLift]       0`b
+	[Hurricane]     0`b % Bow's "Spook" as well
+	[UpAndAway]     0`b
+	[PowerBounce]  80`b
+	[SpinSmash]     4`b % weight (0-4)
+	% ui positions
+	[Size]         29`b  26`b % width height
+	[HealthBar]     0`b   0`b % dx dy
+	[StatusTurn]  -10`b  20`b % dx dy
+	[StatusIcon]   10`b  20`b % dx dy
+}
+
+% #new:IdleAnimations $IdleAnimations_Snowball {
+% 	.Status:Normal    00090506
+% 	.Status:Stone     00090506
+% 	.Status:Sleep     00090506
+% 	.Status:Poison    00090506
+% 	.Status:Stop      00090506
+% 	.Status:Daze      00090506
+% 	.Status:TurnDone  00090506
+% 	.Status:End
+% }
+
+
+% #new:DefenseTable $DefenseTable_Snowball {
+% 	.Element:Normal 00000000
+% 	.Element:End
+% }
