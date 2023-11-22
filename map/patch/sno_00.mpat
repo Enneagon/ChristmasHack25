@@ -324,7 +324,7 @@
             Set   *Var[0] $Script_CreateExitTriggers
             Exec  EnterWalk
             Call  DisablePlayerInput ( .True )
-            Call  SetNpcAnimation   ( .NpcID:Luigi 0082000A )
+            Call  SetNpcAnimation   ( .NpcID:Luigi 0082001D )
             Call  NpcMoveTo     ( .NpcID:Luigi  -16` 300`  0` )
             Call  SetNpcAnimation   ( .NpcID:Luigi 00820004 )
             Wait 30`

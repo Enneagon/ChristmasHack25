@@ -1,0 +1,64 @@
+#define .NpcID:Luigi              01
+
+@ $Script_Main {
+    Set   *GB_WorldLocation  .Location:GoombaRoad
+    Call  SetSpriteShading  ( .Shading:None )
+    Call  SetCamPerspective ( .Cam:Default 00000003  25`  16`  4096` )
+    Call  SetCamBGColor     ( .Cam:Default  0`  0`  0` )
+    Call  SetCamEnabled     ( .Cam:Default .True )
+    Call  MakeNpcs  ( .False $NpcGroupList_80240BFC )
+    Call  ClearDefeatedEnemies ( )
+    Call  SetMusicTrack ( 00000000 .Song:PeachsCastleParty 00000001 00000008 )
+    Exec  $Script_EnterWalk_80240828
+    Return
+    End
+}
+
+@ $NpcGroup_80240A0C
+{
+	.NpcID:Luigi $NpcSettings_80240990 ~Vec3f:Luigi % 0 -1000 0
+	00000001 $Script_Init_Luigi 00000000 00000000 00000000
+	~NoDrops
+	~Movement:Luigi
+	~AnimationTable:Luigi % .Sprite:Toad
+	00000000 00000000 00000000 00000000 % no tattle string
+}
+
+#new:Script $Script_Init_Luigi
+{
+    Call SetNpcYaw ( .Npc:Self 270` )
+    Return
+    End
+}
+
+@ $Script_EnterWalk_80240828 {
+    Call  DisablePlayerInput    ( .True )
+    Thread
+        Call  SetNpcAnimation       ( .NpcID:Luigi 0082000A )
+        Call  SetNpcSpeed   ( .NpcID:Luigi *Fixed[4.0] )
+        Call  NpcMoveTo     ( .NpcID:Luigi  120` 100` 0` )
+        Call  SetNpcAnimation       ( .NpcID:Luigi 0082000C )
+        Wait 10`
+        Call  SetNpcJumpscale ( .NpcID:Luigi *Fixed[1.0] )
+        Call  SetNpcAnimation   ( .NpcID:Luigi 0082000D )
+        Call  PlaySoundAtNpc    ( .NpcID:Luigi .Sound:Jump 00000000 )
+        Call  NpcJump0 ( .NpcID:Luigi 50` 45` 45` 15` )
+        Call  SetNpcAnimation   ( .NpcID:Luigi 0082000F )
+        Call  PlaySoundAtNpc    ( .NpcID:Luigi .Sound:SoftLand 00000000 )
+        Wait 10`
+        Call  SetNpcAnimation       ( .NpcID:Luigi 0082001E )
+        Call  NpcMoveTo     ( .NpcID:Luigi  30` -90` 0` )
+    EndThread
+    Thread
+        Call SetPlayerSpeed ( *Fixed[4.0] )
+        Call PlayerMoveTo ( 120` 100` 0` )
+        Wait 10`
+        Call  SetPlayerJumpscale    ( *Fixed[1.0] )
+        Call  PlayerJump ( 60` 45` 45` 20` )
+        Call PlayerMoveTo ( 80` -100` 0` )
+    EndThread
+    Wait 215`
+    Call  GotoMap       ( "sno_00" ~Entry:sno_00:entry_s )
+    Return
+    End
+}
