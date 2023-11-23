@@ -88,11 +88,8 @@
 @ $Script_8023A754 {
 	Call  LoadActionCommand ( .ActionCommand:Smash )
     Call  802A9000 ( )
+    Wait 15`
     Call  InitTargetIterator ( )
-    Call  SetAnimation  ( .Actor:Partner FFFFFFFF 000A0004 )
-    Call  SetAnimation  ( .Actor:Partner FFFFFFFF 000A000E )
-    Wait  15`
-    Call  SetAnimation  ( .Actor:Partner FFFFFFFF 000A000A )
     Loop  0000001E
         Wait  1`
         Call  CheckButtonDown   ( ~Flags:Buttons:40000 *Var0 )
@@ -102,7 +99,7 @@
     EndLoop
     Call  802A9258  ( 00000000 0000002F 00000003 )
     Call  SetActionResult   ( 00000000 )
-    Call  SetAnimation      ( .Actor:Partner FFFFFFFF 00090016 )
+    Call  SetAnimation      ( .Actor:Partner 00000001 00090016 )
     Call  UseBattleCamPreset    ( 0000003B )
     Set   *Var9  00000000
     Set   *Var1  00000000
@@ -124,35 +121,19 @@
     ExecWait  $Script_802392A4
     Call  SetGoalToTarget   ( .Actor:Partner )
     Call  PartnerTestEnemy  ( *Var0 ~Flags:DamageType:0 00000014 00000000  2` 00000010 )
-    Call  SetAnimation  ( .Actor:Partner FFFFFFFF 00090017 )
+    Call  SetAnimation  ( .Actor:Partner 00000001 00090017 )
+    Call SetPartFlagBits   ( .Actor:Partner 00000002 00000001 .False )
+    Call GetPartPos ( .Actor:Partner 00000001 *VarD *VarE *VarF )
+    Add *VarD 25`
+    Call SetPartPos ( .Actor:Partner 00000002 *VarD *VarE *VarF )
+    Call SetAnimation ( .Actor:Partner 00000002 00090006 )
     If  *Var0  ==  .HitResult:Miss % 6
         Thread
             Call  $Function_80238000 ( )
         EndThread
         Wait  4`
-        Set   *Var0  00000000
-        Loop  00000002
-            Add   *Var0  FFFFFFE2
-            Call  SetActorRotation  ( .Actor:Partner 00000000 00000000 *Var0 )
-            Wait  1`
-        EndLoop
-        Wait  5`
-        Call  GetActorPos   ( .Actor:Partner *Var4 *Var5 *Var6 )
-        Call  PlayEffect    ( ~FX:SmokeImpact:Small *Var4 *Var5 *Var6 00000010 00000004 00000000 0000000A 00000000 00000000 00000000 00000000 00000000 )
-        Loop  00000005
-            Add   *Var0  0000000C
-            Call  SetActorRotation  ( .Actor:Partner 00000000 00000000 *Var0 )
-            Wait  1`
-        EndLoop
-        Call  SetActorRotationOffset    ( .Actor:Partner 00000000 00000000 00000000 )
-        Call  SetActorRotation  ( .Actor:Partner 00000000 00000000 00000002 )
-        Wait  2`
-        Call  SetActorRotation  ( .Actor:Partner 00000000 00000000 FFFFFFFE )
-        Wait  2`
-        Call  SetActorRotation  ( .Actor:Partner 00000000 00000000 00000000 )
-        Wait  10`
-        Wait  10`
-        Call  SetAnimation      ( .Actor:Partner FFFFFFFF 00090001 )
+        Call  SetAnimation      ( .Actor:Partner 00000001 00090001 )
+        Call SetPartFlagBits   ( .Actor:Self 00000002 00000001 .True )
         Return
     EndIf
     Call  GetActionCommandResult    ( *Var0 )
@@ -162,8 +143,9 @@
         Default
             Call  PartnerDamageEnemy    ( *Var0 ~Flags:DamageType:0 0000009F 00000000 00000001 00000030 )
     EndSwitch
+    Call SetPartFlagBits   ( .Actor:Partner 00000002 00000001 .True )
     Wait 15`
-    Call  SetAnimation      ( .Actor:Partner FFFFFFFF 00090001 )
+    Call  SetAnimation      ( .Actor:Partner 00000001 00090001 )
     Call  PlaySoundAtActor  ( .Actor:Partner 00000000 )
     Switch  *Var0
         CaseOR  ==  .HitResult:Hit % 0
@@ -265,7 +247,7 @@
 
 @ $PartsTable_802392A4 {
 	00000000 01000000 081600FF $IdleAnimations_802391B0 $DefenseTable_802391EC 00000000 00000000 00000000 00000000
-	%00000001 02000000 081600FF $IdleAnimations_Snowball $DefenseTable_Snowball 00000000 00000000 00000000 00000000
+	00100001 02000000 000000FF $IdleAnimations_Snowball $DefenseTable_Snowball 00000000 00000000 00000000 00000000
 }
 
 @ $Goombario {
@@ -277,7 +259,7 @@
 	[Flags]       00000000
 	[StatusTable] $StatusTable_802391F8
 	% ai
-	[PartsCount]    1`s %REMEMBER TO SET TO TWO!!!!
+	[PartsCount]    2`s
 	[PartsTable]  $PartsTable_802392A4
 	[Script]      $Script_Init_802392F0
 	% move effectiveness
@@ -295,19 +277,19 @@
 	[StatusIcon]   10`b  20`b % dx dy
 }
 
-% #new:IdleAnimations $IdleAnimations_Snowball {
-% 	.Status:Normal    00090506
-% 	.Status:Stone     00090506
-% 	.Status:Sleep     00090506
-% 	.Status:Poison    00090506
-% 	.Status:Stop      00090506
-% 	.Status:Daze      00090506
-% 	.Status:TurnDone  00090506
-% 	.Status:End
-% }
+#new:IdleAnimations $IdleAnimations_Snowball {
+	.Status:Normal    00090506
+	.Status:Stone     00090506
+	.Status:Sleep     00090506
+	.Status:Poison    00090506
+	.Status:Stop      00090506
+	.Status:Daze      00090506
+	.Status:TurnDone  00090506
+	.Status:End
+}
 
 
-% #new:DefenseTable $DefenseTable_Snowball {
-% 	.Element:Normal 00000000
-% 	.Element:End
-% }
+#new:DefenseTable $DefenseTable_Snowball {
+	.Element:Normal 00000001
+	.Element:End
+}
