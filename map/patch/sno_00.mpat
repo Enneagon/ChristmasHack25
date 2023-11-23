@@ -246,7 +246,7 @@
         Call  PanToTarget       ( .Cam:Default 00000000 00000001 )
         Call  PlayerFaceNpc ( .NpcID:Parakarry .False )
         Call InterpNpcYaw ( .NpcID:Princess 270` 10` )
-        Call NpcFlyTo ( .NpcID:Parakarry -40` 0` 33` 120` 1` .Easing:CosInOut )
+        Call NpcFlyTo ( .NpcID:Parakarry -40` 15` 33` 120` 1` .Easing:CosInOut )
         Call  SetNpcAnimation   ( .NpcID:Parakarry 00040001 )
         Call  SpeakToPlayer ( .NpcID:Parakarry 00040006 00040001 00000000 002F0013 ) % String
         Call SpeakToNpc ( .NpcID:Princess 00D60002 00D60004 00000000 .NpcID:Parakarry 002F0014 )
@@ -262,9 +262,11 @@
         Call  SetNpcAnimation   ( .NpcID:Princess 00D60007 )
         Call  SetPlayerAnimation ( .PlayerAnim:Scared )
         Thread
+            Call  GetNpcPos     ( .NpcID:Parakarry *Var0 *Var1 *Var2 )
+            Call  NpcJump1 ( .NpcID:Parakarry *Var0 0` *Var2 10` )
         Loop  00000005
             Call  GetNpcPos     ( .NpcID:Parakarry *Var0 *Var1 *Var2 )
-            Add *Var1 20`
+            Add *Var1 150`
             Call  UseSettingsFrom   ( .Cam:Default 0` 200` 0` )
             Call  SetPanTarget  ( .Cam:Default *Var0 *Var1 *Var2 )
             Call  SetCamDistance    ( .Cam:Default *Fixed[210.0] )
@@ -272,7 +274,7 @@
             Call  PanToTarget   ( .Cam:Default 00000000 00000001 )
             Call  WaitForCam    ( .Cam:Default *Fixed[1.0] )
             Call  GetNpcPos     ( .NpcID:Parakarry *Var0 *Var1 *Var2 )
-            Add *Var1 20`
+            Add *Var1 150`
             Call  UseSettingsFrom   ( .Cam:Default 0` 200` 0` )
             Call  SetPanTarget  ( .Cam:Default *Var0 *Var1 *Var2 )
             Call  SetCamDistance    ( .Cam:Default *Fixed[400.0] )
@@ -297,8 +299,14 @@
         Call  PlayerJump ( *Var0 *Var1 *Var2 15` )
         Call  SetNpcAnimation   ( .NpcID:Parakarry 00040001 )
         Call  GetNpcPos     ( .NpcID:Parakarry *Var0 *Var1 *Var2 )
-        Call  NpcJump1 ( .NpcID:Parakarry *Var0 *Var1 *Var2 10` )
+        Call  NpcJump1 ( .NpcID:Parakarry *Var0 15` *Var2 10` )
         Wait 20`
+        Thread
+            Call  SetCamSpeed   ( .Cam:Default *Fixed[1.0] )
+            Call  UseSettingsFrom   ( .Cam:Default 0` 200` 150` )
+            Call  PanToTarget       ( .Cam:Default 00000000 00000001 )
+            Call  WaitForCam    ( .Cam:Default *Fixed[1.0] )
+        EndThread
         Thread
             Call PlayerMoveTo ( 14` 300` 120` )
         EndThread
@@ -326,8 +334,9 @@
             Call  DisablePlayerInput ( .True )
             Call  SetNpcAnimation   ( .NpcID:Luigi 0082001D )
             Call  NpcMoveTo     ( .NpcID:Luigi  -16` 300`  0` )
-            Call  SetNpcAnimation   ( .NpcID:Luigi 00820004 )
+            Call  SetNpcAnimation   ( .NpcID:Luigi 0082001B )
             Wait 30`
+            Call  SetNpcAnimation   ( .NpcID:Luigi 00820004 )
             Call  SpeakToPlayer ( .NpcID:Luigi 00820014 00820004 00000000 002F0004 )
             Call  SetNpcAnimation   ( .NpcID:Luigi 0082000A )
             Call  NpcMoveTo     ( .NpcID:Luigi  -60` 230`  0` )

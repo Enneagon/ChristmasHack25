@@ -21,6 +21,7 @@
         Call  SetNpcAnimation   ( 00000000 0082000A )
         Call  SetNpcSpeed   ( 00000000 *Fixed[4.0] )
         Call  NpcMoveTo     ( 00000000  -200` -317`  0` )
+        Call  SetNpcAnimation   ( 00000000 0082001E )
         Call  NpcMoveTo     ( 00000000  -400` -460`  0` )
     EndThread
     Wait  70`

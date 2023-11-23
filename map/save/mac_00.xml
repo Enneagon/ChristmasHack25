@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Map name="mac_00" author="unnamed" background="sam_bg" textures="mac_tex">
+<Map name="mac_00" author="unnamed" background="yki_bg" textures="mac_tex">
 	<Editor>
 		<Camera pos="-139.248077,252.085907,128.496048" pitch="10.440008" yaw="340.959961"/>
 		<Camera pos="-485.518158,65536.000000,-463.169464"/>
