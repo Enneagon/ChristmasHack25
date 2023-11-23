@@ -31,7 +31,7 @@
     Call  PanToTarget   ( .Cam:Default 00000000 00000001 )
     Call  WaitForCam    ( .Cam:Default *Fixed[1.0] )
     Call  UseSettingsFrom   ( .Cam:Default  -400`  0`  -400` )
-    Call  SetPanTarget  ( .Cam:Default  -250`  0`  -300` )
+    Call  SetPanTarget  ( .Cam:Default  -250`  30`  -300` )
     Call  SetCamDistance    ( .Cam:Default *Fixed[250.0] )
     Call  SetCamSpeed   ( .Cam:Default *Fixed[0.75] )
     Call  PanToTarget   ( .Cam:Default 00000000 00000001 )

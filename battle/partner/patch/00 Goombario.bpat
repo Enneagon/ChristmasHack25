@@ -100,8 +100,8 @@
     Call  802A9258  ( 00000000 0000002F 00000003 )
     Call  SetActionResult   ( 00000000 )
     % Decide on if it's gonna be a stone or a snowball
-    Call RandInt ( 1` *VarF )
-    If *VarF == 1`
+    Call RandInt ( 99` *VarF )
+    If *VarF < 73`
         Set *Var6 4`
         Set *Var7 3`
     Else
