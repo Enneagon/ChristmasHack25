@@ -122,20 +122,33 @@
     Call  SetGoalToTarget   ( .Actor:Partner )
     Call  PartnerTestEnemy  ( *Var0 ~Flags:DamageType:0 00000014 00000000  2` 00000010 )
     Call  SetAnimation  ( .Actor:Partner 00000001 00090017 )
+    Wait 3`
     Call SetPartFlagBits   ( .Actor:Partner 00000002 00000001 .False )
-    Call GetPartPos ( .Actor:Partner 00000001 *VarD *VarE *VarF )
-    Add *VarD 25`
+    Call GetActorPos ( .Actor:Partner *VarD *VarE *VarF )
+    Add *VarD 5`
+    Add *VarE 10`
     Call SetPartPos ( .Actor:Partner 00000002 *VarD *VarE *VarF )
-    Call SetAnimation ( .Actor:Partner 00000002 00090006 )
+    Call GetGoalPos ( .Actor:Partner *VarD *VarE *VarF )
+    Call SetPartJumpGravity ( .Actor:Partner 00000002 *Fixed[1.5] )
+    Set *Var5 0`
+    Thread
+        Loop 10`
+            Add *Var5 30`
+            Wait 1`
+            Call SetPartRotation ( .Actor:Partner 00000002 0` 0` *Var5 )
+        EndLoop
+    EndThread
+    Call JumpPartTo ( .Actor:Partner 00000002 *VarD *VarE *VarF 10` .False )
     If  *Var0  ==  .HitResult:Miss % 6
+        Call SetPartFlagBits   ( .Actor:Partner 00000002 00000001 .True )
         Thread
             Call  $Function_80238000 ( )
         EndThread
         Wait  4`
         Call  SetAnimation      ( .Actor:Partner 00000001 00090001 )
-        Call SetPartFlagBits   ( .Actor:Self 00000002 00000001 .True )
         Return
     EndIf
+    Call SetPartFlagBits   ( .Actor:Partner 00000002 00000001 .True )
     Call  GetActionCommandResult    ( *Var0 )
     Switch  *Var0
         Case  >  00000000
@@ -143,7 +156,6 @@
         Default
             Call  PartnerDamageEnemy    ( *Var0 ~Flags:DamageType:0 0000009F 00000000 00000001 00000030 )
     EndSwitch
-    Call SetPartFlagBits   ( .Actor:Partner 00000002 00000001 .True )
     Wait 15`
     Call  SetAnimation      ( .Actor:Partner 00000001 00090001 )
     Call  PlaySoundAtActor  ( .Actor:Partner 00000000 )
