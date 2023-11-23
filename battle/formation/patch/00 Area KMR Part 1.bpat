@@ -1,0 +1,9 @@
+% Script File: 00 Area KMR Part 1.bscr
+% Decoded from: 4309A0 to 439A90 (00 Area KMR Part 1)
+
+#import newenemy/AngelStar.bpat
+
+@ $Formation_00
+{
+	$AngelStar 00000006 0000000A 00000000 00000000 00000000 00000000
+}
