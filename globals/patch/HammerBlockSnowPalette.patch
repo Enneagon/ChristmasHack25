@@ -1,0 +1,19 @@
+%Hammer1Block image
+@Data E317B0 {
+    ~RasterFile:CI-4:E317B0.ci4.png
+ }
+ 
+ %Hammer1Block palette
+ @Data E318B0 {
+    ~PaletteFile:CI-4:E317B0.ci4.png
+ }
+ 
+ %Hammer1BlockShattering image
+ @Data E33480 {
+    ~RasterFile:CI-8:E33480.ci8.png
+ }
+ 
+ %Hammer1BlockShattering palette
+ @Data E33680 {
+    ~PaletteFile:CI-8:E33480.ci8.png
+ }
