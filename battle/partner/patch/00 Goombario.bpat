@@ -101,7 +101,7 @@
     Call  SetActionResult   ( 00000000 )
     % Decide on if it's gonna be a stone or a snowball
     Call RandInt ( 99` *VarF )
-    If *VarF < 73`
+    If *VarF > 89`
         Set *Var6 4`
         Set *Var7 3`
     Else

@@ -1,0 +1,29 @@
+#string:28:002
+{
+Throw a snowball at an enemy.[BR]
+Might throw a rock instead.[End]
+}
+
+#string:28:007
+{
+Throw a snowball at an enemy.[BR]
+Has a 1 in 10 chance to throw[BR]
+a rock instead of a snowball,[BR]
+dealing double damage.[End]
+}
+
+#string:28:008
+{
+Throw a snowball at an enemy.[BR]
+Has a 1 in 10 chance to throw[BR]
+a rock instead of a snowball,[BR]
+dealing double damage.[End]
+}
+
+#string:28:009
+{
+Throw a snowball at an enemy.[BR]
+Has a 1 in 10 chance to throw[BR]
+a rock instead of a snowball,[BR]
+dealing double damage.[End]
+}
