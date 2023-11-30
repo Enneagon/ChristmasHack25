@@ -18,6 +18,7 @@
 	Exec  $Script_BindFoliage
     Call  MakeNpcs  ( .False $NpcGroupList_Always )
     Exec  $Script_EnterMap
+    Call  ModifyColliderFlags   ( 00000000 ~Collider:IceCollider 00000010 )
     Return
     End
 }
