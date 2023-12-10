@@ -573,6 +573,7 @@
 		<Map name="sno_00" nickname="Big Tree"/>
 		<Map name="sno_01" nickname="Fort Exterior"/>
 		<Map name="sno_02" nickname="Fort 1-1"/>
+		<Map name="sno_03" nickname="Fort 1-2"/>
 	</Area>
 	<Resource name="mac_tex" compressed="false"/>
 	<Resource name="tik_tex" compressed="false"/>

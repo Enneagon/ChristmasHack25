@@ -1,0 +1,36 @@
+@ $Script_Main {
+    Set   *GB_WorldLocation  .Location:None
+    Call  SetCamPerspective  ( .Cam:Default 00000003 00000019 00000010 00001000 )
+    Call  SetCamBGColor      ( .Cam:Default 00000000 00000000 00000000 )
+    Call  SetCamEnabled      ( .Cam:Default .True
+    Call  SetCamLeadPlayer   ( .Cam:Default .False )
+    Exec  $Script_SetupMusic
+    Exec  $Script_EnableSnow
+    Exec  $Script_EnterMap
+    Return
+    End
+}
+
+#new:Script $Script_EnableSnow
+{
+    If *MF_Room12_IceMelted == .True
+        Call EnableModel ( ~Model:IceModel .False )
+        Call  ModifyColliderFlags   ( 00000000 ~Collider:IceCollider 7FFFFE00 )
+    EndIf
+    If *MF_Room12_SouthDoorOpen == .True
+        Call EnableModel ( ~Model:SouthDoor .False )
+        Call  ModifyColliderFlags   ( 00000000 ~Collider:SouthDoorCollider 7FFFFE00 )
+    Else
+        Call  MakeEntity    ( .Entity:BlueSwitch ~Vec4d:DoorSwitch 80000000 )
+        Call  AssignAreaFlag      ( *AreaFlag[000] )
+        Call  AssignScript    ( $Script_SouthDoorOpens )
+    EndIf
+    Return
+    End
+}
+
+#new:Script $Script_SouthDoorOpens
+{
+    Return
+    End
+}

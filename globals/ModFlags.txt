@@ -1,0 +1,8 @@
+000 = MF_Room11_SnowCube
+001 = MF_Room11_SnowPile2
+002 = MF_Room11_SnowPile3
+003 = MF_Room11_SnowPile4
+004 = MF_Room11_WestDoorOpen
+005 = MF_Room11_CoinBlock
+006 = MF_Room12_IceMelted
+007 = MF_Room12_SouthDoorOpen
