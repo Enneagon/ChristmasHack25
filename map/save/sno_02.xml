@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map name="sno_02" author="unnamed" textures="sam_tex">
 	<Editor>
-		<Camera pos="-457.884521,167.761963,67.394264" pitch="26.640072" yaw="74.525558"/>
+		<Camera pos="-720.329773,247.368256,504.907410" pitch="25.680075" yaw="48.125546"/>
 		<Camera pos="-362.777466,65536.000000,40.919838"/>
 		<Camera pos="65536.000000,-3.843391,89.329811"/>
 		<Camera pos="-314.597748,5.530684,65536.000000"/>
