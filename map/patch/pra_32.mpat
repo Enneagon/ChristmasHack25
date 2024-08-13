@@ -1,0 +1,75 @@
+@ $Header
+{
+	[MainScript]  $Script_Main
+	[EntryList]   $EntryList
+	[EntryCount]  00000002
+	[Background]  80200000
+	[MapTattle]   0019014D
+}
+
+@ $EntryList
+{
+	~Vec4f:Entry0 %   13.0    0.0   70.0   90.0
+	~Vec4f:Entry1
+}
+
+@ $Script_Main
+{
+    0:  Set   *GB_WorldLocation  .Location:CrystalPalace
+   10:  Call  SetSpriteShading  ( .Shading:None )
+   20:  Call  SetCamPerspective ( .Cam:Default 00000003  25`  16`  4096` )
+   40:  Call  SetCamBGColor     ( .Cam:Default  0`  0`  0` )
+   5C:  Call  SetCamLeadPlayer  ( .Cam:Default .False )
+   70:  Call  SetCamEnabled     ( .Cam:Default .True )
+   84:  Call  MakeNpcs  ( .True $NpcGroupList_80242C94 )
+   98:  Call  ModifyColliderFlags   ( 00000003 ~Collider:o1309 00000008 )
+   B0:  Call  ModifyColliderFlags   ( 00000003 ~Collider:o1293 00000008 )
+   C8:  Call  PlayEffect        ( ~FX:Snowfall 00000078 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 )
+  10C:  Call  $Function_80240814 ( )
+  118:  Exec  $Script_80240890
+  124:  Exec  $Script_80241258
+  130:  Wait  1`
+  13C:  Return
+  144:  End
+}
+
+@ $Script_80241258 % EnterMap
+{
+   Call  GetEntryID    ( *Var[0] )
+	Switch  *Var[0]
+		Case  ==  ~Entry:Entry0
+            Set   *Var2  $???_80241178
+            Set   *Var3  $???_80241180
+            ExecWait  BaseEnterDoor
+            Exec  $Script_8024122C
+        Case  ==  ~Entry:Entry1
+			Set   *Var[0] $Script_8024122C
+            Exec EnterWalk
+		EndCaseGroup
+		Default
+			Exec  $Script_8024122C
+	EndSwitch
+	Return
+	End
+   38:  Return
+   40:  End
+}
+
+@ $Script_8024122C
+{
+    0:  Bind  $Script_80241188 .Trigger:WallPressA ~Collider:deilittw 00000001 00000000
+        Bind  $Script_EnterSnowfort .Trigger:FloorAbove ~Collider:SnowfortLZCollider 00000001 00000000
+   1C:  Return
+   24:  End
+}
+
+#new:Script $Script_EnterSnowfort
+{
+	SetGroup 0000001B
+	Call     UseExitHeading ( 60` ~Entry:Entry1 )
+	Exec     ExitWalk
+	Call  GotoMap   ( "sno_02" ~Entry:sno_02:entry_s )
+	Wait  100`
+	Return
+	End
+}
