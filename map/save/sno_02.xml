@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map name="sno_02" author="unnamed" textures="sam_tex">
 	<Editor>
-		<Camera pos="-720.329773,247.368256,504.907410" pitch="25.680075" yaw="48.125546"/>
+		<Camera pos="-744.623230,323.115723,695.497070" pitch="33.440014" yaw="47.325615"/>
 		<Camera pos="-362.777466,65536.000000,40.919838"/>
 		<Camera pos="65536.000000,-3.843391,89.329811"/>
 		<Camera pos="-314.597748,5.530684,65536.000000"/>
 	</Editor>
 	<ModelTree>
-		<Node name="Root" id="14">
+		<Node name="Root" id="15">
 			<Node name="BigFloor" id="0"/>
 			<Node name="BigWall" id="1"/>
 			<Node name="TorusModel" id="2"/>
@@ -29,6 +29,7 @@
 			<Node name="Block3" id="11"/>
 			<Node name="SnowShroom" id="12"/>
 			<Node name="Blocker" id="13"/>
+			<Node name="Split Model" id="14"/>
 		</Node>
 	</ModelTree>
 	<ColliderTree>
@@ -51,7 +52,7 @@
 				<Node name="HullCollider" id="D"/>
 				<Node name="MeshCollider" id="E"/>
 				<Node name="HullCollider" id="F"/>
-				<Node name="MeshCollider" id="10"/>
+				<Node name="SouthExitCollider" id="10"/>
 				<Node name="HullCollider" id="11"/>
 				<Node name="WestDoorCollider" id="12"/>
 			</Node>
@@ -92,9 +93,35 @@
 	</LightSets>
 	<Models>
 		<Model ver="2" type="ROOT" lightset="0">
-			<MapObject name="Root" id="14"/>
+			<MapObject name="Root" id="15"/>
 			<BoundingBox empty="false" min="-700,-100,-100" max="100,120,700"/>
 			<PropertyList>
+			</PropertyList>
+		</Model>
+		<Model ver="2" type="MODEL" lightset="0">
+			<MapObject name="Split Model" id="14"/>
+			<ShapeMesh ver="3" texture="">
+				<DisplayList>
+					<F3DEX2 cmd="E7000000,0"/>
+					<F3DEX2 cmd="D9FDFFFF,0"/>
+					<F3DEX2 cmd="D9FFFFFF,200400"/>
+					<TriangleBatch ver="0">
+						<VertexTable>
+							<Vertex xyz="-600,0,518" uv="-3488,-4800"/>
+							<Vertex xyz="-459,0,518" uv="-3488,-2544" rgba="205,205,255,255"/>
+							<Vertex xyz="-530,0,447" uv="-2352,-3680" rgba="205,205,255,255"/>
+							<Vertex xyz="-530,0,588" uv="-4608,-3680"/>
+						</VertexTable>
+						<TriangleList>
+							<Triangle ijk="0,1,2"/>
+							<Triangle ijk="0,3,1"/>
+						</TriangleList>
+					</TriangleBatch>
+				</DisplayList>
+			</ShapeMesh>
+			<PropertyList>
+				<Property v="5C,0,1"/>
+				<Property v="5F,0,0"/>
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
@@ -3960,7 +3987,7 @@
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
 			<MapObject name="BigWall" id="1"/>
-			<ShapeMesh ver="3" texture="sam_s_snowtile">
+			<ShapeMesh ver="3" texture="">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
 					<F3DEX2 cmd="D9FDFFFF,0"/>
@@ -4451,16 +4478,8 @@
 					</TriangleBatch>
 					<TriangleBatch ver="0">
 						<VertexTable>
-							<Vertex xyz="-600,0,518" uv="-3488,-4800"/>
-							<Vertex xyz="-530,0,588" uv="-4608,-3680"/>
-							<Vertex xyz="-459,0,518" uv="-3488,-2544" rgba="205,205,255,255"/>
-							<Vertex xyz="-600,0,518" uv="-3488,-4800"/>
-							<Vertex xyz="-459,0,518" uv="-3488,-2544" rgba="205,205,255,255"/>
-							<Vertex xyz="-530,0,447" uv="-2352,-3680" rgba="205,205,255,255"/>
 						</VertexTable>
 						<TriangleList>
-							<Triangle ijk="0,1,2"/>
-							<Triangle ijk="3,4,5"/>
 						</TriangleList>
 					</TriangleBatch>
 					<TriangleBatch ver="0">
@@ -5219,7 +5238,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="MeshCollider" id="10" hidden="true"/>
+			<MapObject name="SouthExitCollider" id="10" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -6540,25 +6559,25 @@
 			<MapObject name="CoinBlock" id="6"/>
 		</Marker>
 		<Marker ver="4" type="Position" pos="0,0,500" yaw="0.000000">
-			<MapObject name="SnowCube2" id="5" hidden="true"/>
+			<MapObject name="SnowCube2" id="5"/>
 		</Marker>
 		<Marker ver="4" type="Position" pos="0,-50,500" yaw="0.000000">
-			<MapObject name="SnowCube" id="4" hidden="true"/>
+			<MapObject name="SnowCube" id="4"/>
 		</Marker>
 		<Marker ver="4" type="Group">
 			<MapObject name="Entrances" id="3"/>
 		</Marker>
 		<Marker ver="4" type="Entry" pos="-497,0,25" yaw="180.000000">
-			<MapObject name="entry_w" id="2" hidden="true"/>
+			<MapObject name="entry_w" id="2"/>
 		</Marker>
 		<Marker ver="4" type="Entry" pos="-486,0,467" yaw="45.000000">
-			<MapObject name="entry_s" id="1" hidden="true"/>
+			<MapObject name="entry_s" id="1"/>
 		</Marker>
 		<Marker ver="4" type="Entry" pos="-26,0,498" yaw="270.000000">
-			<MapObject name="entry_e" id="0" hidden="true"/>
+			<MapObject name="entry_e" id="0"/>
 		</Marker>
 		<Marker ver="4" type="Entry" pos="-227,0,223" yaw="225.000000">
-			<MapObject name="entry_n" id="FFFFFFFF" hidden="true"/>
+			<MapObject name="entry_n" id="FFFFFFFF"/>
 		</Marker>
 	</Markers>
 	<ScriptData>
@@ -6585,6 +6604,7 @@
 			<Entrance name="Entry3" type="Walk" hasCallback="false" entry="entry_n"/>
 			<Entrance name="Entry4" type="Walk" hasCallback="false" entry="entry_e"/>
 			<Entrance name="Entry1" type="Walk" hasCallback="false" entry="entry_s"/>
+			<Exit type="Walk" hasCallback="false" entry="entry_s" destMap="sno_02" destEntry="entry_s" trigger="SouthExitCollider"/>
 		</Generators>
 		<Camera vfov="25" near="16" far="4096" bgcolor="0,0,0" leadsPlayer="false"/>
 		<Fog world="0,10,10,10,255,950,1000" entity="0,10,10,10,255,950,1000"/>
