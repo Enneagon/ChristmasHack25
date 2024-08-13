@@ -70,10 +70,8 @@
 		</Node>
 	</ColliderTree>
 	<ZoneTree>
-		<Node name="Root" id="3">
+		<Node name="Root" id="1">
 			<Node name="MainZone" id="0"/>
-			<Node name="RightZone" id="1"/>
-			<Node name="LeftZone" id="2"/>
 		</Node>
 	</ZoneTree>
 	<MarkerTree>
@@ -6504,61 +6502,11 @@
 	</Colliders>
 	<Zones>
 		<Zone ver="0">
-			<MapObject name="Root" id="3"/>
+			<MapObject name="Root" id="1"/>
 			<HitObject type="ROOT"/>
 		</Zone>
 		<Zone ver="0">
-			<MapObject name="LeftZone" id="2" hidden="true"/>
-			<HitObject type="HIT"/>
-			<HitMesh ver="0">
-				<TriangleBatch ver="0">
-					<VertexTable>
-						<Vertex xyz="-666,0,216" uv="-5056,2144"/>
-						<Vertex xyz="-400,0,0" uv="800,5600"/>
-						<Vertex xyz="-700,0,0" uv="-5600,5600"/>
-						<Vertex xyz="-546,0,-100" uv="2848,3904"/>
-						<Vertex xyz="-452,0,0" uv="2784,1712"/>
-						<Vertex xyz="-453,0,-100" uv="3904,2848"/>
-						<Vertex xyz="-546,0,-100" uv="2848,3904"/>
-						<Vertex xyz="-547,0,0" uv="1712,2784"/>
-						<Vertex xyz="-452,0,0" uv="2784,1712"/>
-					</VertexTable>
-					<TriangleList>
-						<Triangle ijk="0,1,2"/>
-						<Triangle ijk="3,4,5"/>
-						<Triangle ijk="6,7,8"/>
-					</TriangleList>
-				</TriangleBatch>
-			</HitMesh>
-			<Camera type="TYPE_6" flag="false" boomLength="450.000000" boomPitch="16.000000" viewPitch="-6.000000" posA="-639,-212,153" posB="-627,667,164" posC="-212,0,667"/>
-		</Zone>
-		<Zone ver="0">
-			<MapObject name="RightZone" id="1" hidden="true"/>
-			<HitObject type="HIT"/>
-			<HitMesh ver="0">
-				<TriangleBatch ver="0">
-					<VertexTable>
-						<Vertex xyz="-216,0,666" uv="-5056,2144"/>
-						<Vertex xyz="0,0,700" uv="-5600,5600"/>
-						<Vertex xyz="0,0,400" uv="800,5600"/>
-						<Vertex xyz="100,0,544" uv="2848,3904"/>
-						<Vertex xyz="100,0,451" uv="3904,2848"/>
-						<Vertex xyz="0,0,450" uv="2784,1712"/>
-						<Vertex xyz="100,0,544" uv="2848,3904"/>
-						<Vertex xyz="0,0,450" uv="2784,1712"/>
-						<Vertex xyz="0,0,545" uv="1712,2784"/>
-					</VertexTable>
-					<TriangleList>
-						<Triangle ijk="0,1,2"/>
-						<Triangle ijk="3,4,5"/>
-						<Triangle ijk="6,7,8"/>
-					</TriangleList>
-				</TriangleBatch>
-			</HitMesh>
-			<Camera type="TYPE_6" flag="false" boomLength="450.000000" boomPitch="16.000000" viewPitch="-6.000000" posA="-194,10,644" posB="-187,10,653" posC="-212,0,667"/>
-		</Zone>
-		<Zone ver="0">
-			<MapObject name="MainZone" id="0" hidden="true"/>
+			<MapObject name="MainZone" id="0"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
