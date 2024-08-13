@@ -954,6 +954,18 @@ tex: sam_yane_yukitif
 	combine: 8
 }
 
+tex: sam_s_snowtile
+{
+	img: sam_s_snowtile.png
+	{
+		format: CI-4
+		hwrap: repeat
+		vwrap: repeat
+	}
+	filter: yes
+	combine: 8
+}
+
 tex: pra_pra_hashi1_itif
 {
 	img: pra_pra_hashi1_itif.png

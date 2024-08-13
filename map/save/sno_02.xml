@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map name="sno_02" author="unnamed" textures="sam_tex">
 	<Editor>
-		<Camera pos="-744.623230,323.115723,695.497070" pitch="33.440014" yaw="47.325615"/>
+		<Camera pos="-781.926270,272.175568,668.981201" pitch="18.560022" yaw="50.365612"/>
 		<Camera pos="-362.777466,65536.000000,40.919838"/>
 		<Camera pos="65536.000000,-3.843391,89.329811"/>
 		<Camera pos="-314.597748,5.530684,65536.000000"/>
@@ -3989,7 +3989,7 @@
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
 			<MapObject name="BigWall" id="1"/>
-			<ShapeMesh ver="3" texture="">
+			<ShapeMesh ver="3" texture="sam_s_snowtile">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
 					<F3DEX2 cmd="D9FDFFFF,0"/>
