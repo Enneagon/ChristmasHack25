@@ -3,6 +3,7 @@
 <!-- Formats are CI-4, CI-8, I-4, I-8, IA-4, IA-8, IA-16, RGBA-16, and RGBA-32 -->
 <!-- Use flip="true" to vertically flip images when dumping & patching. -->
 <Images>
+	<Image offset="04F210" fmt="I-4" w="128" h="8" name="unk_main"/>
 	<Image offset="0E2E00" fmt="I-4" w="32" h="64" name="ui/stencil/star"/>
 	<Image offset="0E3200" fmt="I-4" w="64" h="64" name="ui/stencil/mario_head"/>
 	<Image offset="0E3A00" fmt="I-4" w="32" h="32" name="ui/stencil/sharp"/>
